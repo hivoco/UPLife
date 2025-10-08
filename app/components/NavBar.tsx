@@ -20,6 +20,7 @@ const Navbar = () => {
             transition
             duration-300
             ease-in-out
+            cursor-pointer
           "
         >
           {item}

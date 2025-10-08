@@ -59,7 +59,7 @@ function Footer() {
           <div>
             <div className="grid grid-cols-3  gap-7">
               {text.map((e) => (
-                <small key={e} className="text-xl font-light ">
+                <small key={e} className="text-xl font-light cursor-pointer">
                   {e}
                 </small>
               ))}
@@ -71,10 +71,10 @@ function Footer() {
             Copyright © 2025 IndiaGate Foods | All Rights Reserved
           </small>
           <div className="flex gap-5 items-center">
-            <div className="bg-white w-9 h-9 rounded-md flex justify-center items-center">
+            <div className="bg-white cursor-pointer w-9 h-9 rounded-md flex justify-center items-center">
               <Image className="" src={`f.svg`} alt="" height={15} width={8} />
             </div>
-            <div className="bg-white w-9 h-9 rounded-md flex justify-center items-center">
+            <div className="bg-white cursor-pointer w-9 h-9 rounded-md flex justify-center items-center">
               <Image
                 className=""
                 src={`insta.svg`}
@@ -83,10 +83,10 @@ function Footer() {
                 width={15}
               />
             </div>
-            <div className="bg-white w-9 h-9 rounded-md flex justify-center items-center">
+            <div className="bg-white cursor-pointer w-9 h-9 rounded-md flex justify-center items-center">
               <Image className="" src={`x.svg`} alt="" height={13} width={16} />
             </div>
-            <div className="bg-white w-9 h-9 rounded-md flex justify-center items-center">
+            <div className="bg-white cursor-pointer w-9 h-9 rounded-md flex justify-center items-center">
               <Image
                 className=""
                 src={`yt.svg`}
@@ -95,7 +95,7 @@ function Footer() {
                 width={15}
               />
             </div>
-            <div className="bg-white w-9 h-9 rounded-md flex justify-center items-center">
+            <div className="bg-white cursor-pointer w-9 h-9 rounded-md flex justify-center items-center">
               <Image
                 className=""
                 src={`in.svg`}

@@ -19,7 +19,7 @@ export default function Home() {
             width={90}
             height={100}
             alt="logo uplife"
-            className="object-cover"
+            className="object-cover cursor-pointer"
           />
           <Navbar />
         </header>
@@ -119,7 +119,7 @@ export default function Home() {
         </section>
 
         <video
-          className="aspect-video w-[50vw] rounded-3xl"
+          className="aspect-video w-[45vw] rounded-3xl"
           src="/16-9.mp4"
           autoPlay={true}
           loop
@@ -127,6 +127,7 @@ export default function Home() {
         />
       </div>
 
+{/* work */}
       <div className="w-full  flex justify-between gap-[6.7vw] px-16">
         <Image
           className="ml-[100px] h-[550px] w-auto"

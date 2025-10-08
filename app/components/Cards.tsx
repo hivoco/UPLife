@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const Cards = () => {
@@ -10,37 +11,38 @@ const Cards = () => {
       title: "Lighter meals, sustained energy",
       description:
         "Light food fuels body, keeps you active and energized all day.",
-      image: "/images/couple-dining.jpg",
+      // image: "/images/couple-dining.jpg",
+      image:"/cards/1.jpg",
       size: "large",
     },
     {
       id: 2,
       title: "Improved digestion, better sleep",
-      image: "/images/man-sleeping.jpg",
+      image:"/cards/2.jpg",
       size: "small",
     },
     {
       id: 3,
       title: "Mindful eating, stress-free life",
-      image: "/images/man-working.jpg",
+      image:"/cards/3.png",
       size: "small",
     },
     {
       id: 4,
       title: "Renewed strength, joyful living",
-      image: "/images/man-exercising.jpg",
+      image:"/cards/4.png",
       size: "small",
     },
     {
       id: 5,
       title: "Daily balance, long-term wellness",
-      image: "/images/woman-exercising.jpg",
+      image:"/cards/5.jpg",
       size: "small",
     },
     {
       id: 6,
       title: "Nourishing wellness in habits",
-      image: "/images/woman-eating.jpg",
+      image:"/cards/6.jpg",
       size: "small",
     },
   ];
@@ -80,7 +82,14 @@ const Cards = () => {
                   : "bg-gradient-to-br from-emerald-500 to-teal-600"
               }`}
             >
-              <div className="absolute inset-0 bg-black/30 transition-opacity duration-700" />
+              {/* <div className="absolute inset-0 bg-black/30 transition-opacity duration-700" /> */}
+
+              <Image
+                src={card.image}
+                alt="Logo"
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="relative h-full flex items-end p-5">

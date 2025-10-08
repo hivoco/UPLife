@@ -74,6 +74,7 @@ const Faqs = () => {
                 <h2 className="text-2xl">{faq.question}</h2>
                 {selectedQuesId === faq.id ? (
                   <svg
+                  className="cursor-pointer"
                     onClick={() => setSelectedQuesId(null)}
                     width="34"
                     height="34"
@@ -96,6 +97,8 @@ const Faqs = () => {
                   </svg>
                 ) : (
                   <svg
+                                    className="cursor-pointer"
+
                     onClick={() => setSelectedQuesId(faq.id)}
                     width="42"
                     height="42"

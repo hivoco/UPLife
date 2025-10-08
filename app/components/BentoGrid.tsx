@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const BentoGrid = () => {
   return (
-    <div className="grid grid-cols-6 auto-rows-[80px] gap-4 py-8 container mx-auto px-6  md:px-16">
+    <div className="grid grid-cols-6 auto-rows-[80px] gap-4 py-8  px-6  md:px-16">
       {/* Top wide video/image */}
       <div className="col-span-4 row-span-5">
         <Image

@@ -182,7 +182,7 @@ export default function RadialLayout() {
               top: `${animationStart.y}px`,
               // transform: "translate(-50%, -50%)",
               transform: "translateX(-50%)",
-              animation: `moveToCenter-${item.id} 1s ease-in-out forwards`,
+              animation: `moveToCenter-${item.id} 700ms ease-in-out forwards`,
             }}
           >
             <style>{`
@@ -245,7 +245,7 @@ export default function RadialLayout() {
               >
                 <Image
                   style={{
-                    animation: `growInner-${item.id} 1s ease-in-out forwards`,
+                    animation: `growInner-${item.id} 700ms ease-in-out forwards`,
                   }}
                   className="w-full h-full object-cover rounded-full"
                   src={item.imgSrcLarge}
@@ -258,7 +258,7 @@ export default function RadialLayout() {
               <div
                 className="text-center mt-6"
                 style={{
-                  animation: "fadeInText 1s ease-in-out forwards",
+                  animation: "fadeInText 700ms ease-in-out forwards",
                 }}
               >
                 <h3 className="text-white font-bold text-3xl mb-2">
@@ -284,7 +284,7 @@ export default function RadialLayout() {
               left: `${animationStart.centerX}px`,
               top: `${animationStart.centerY}px`,
               transform: "translate(-50%, -50%)",
-              animation: `returnToOrigin-${item.id} 1s ease-in-out forwards`,
+              animation: `returnToOrigin-${item.id} 700ms ease-in-out forwards`,
             }}
           >
             <style>{`
@@ -343,7 +343,7 @@ export default function RadialLayout() {
               <div
                 className=" flex items-center justify-center"
                 style={{
-                  animation: `shrinkCircle-${item.id} 1s ease-in-out forwards`,
+                  animation: `shrinkCircle-${item.id} 700ms ease-in-out forwards`,
                 }}
               >
                 <Image
@@ -358,7 +358,7 @@ export default function RadialLayout() {
               <div
                 className="text-center mt-6"
                 style={{
-                  animation: "fadeOutText 1s ease-in-out forwards",
+                  animation: "fadeOutText 700ms ease-in-out forwards",
                 }}
               >
                 <h3 className="text-white font-bold text-3xl mb-2">
@@ -380,7 +380,7 @@ export default function RadialLayout() {
       }}
       className="relative  radial-container pt-16 pb-8 text-white whitespace-nowrap"
     >
-      <div className="container mx-auto px-6  md:px-16">
+      <div className=" px-6  md:px-16">
         <div className=" grid grid-cols-3 gap-8 items-center">
           {/* Left Column */}
           <div className="space-y-7 ">
