@@ -14,7 +14,6 @@ function Footer() {
     "Health Benefits",
     "Terms of Services",
   ];
-  const icon = ["f", "insta", "x", "yt", "in"];
   return (
     <div className="container mx-auto px-6 py-2 md:px-16 w-full  text-white">
       <div>

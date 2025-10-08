@@ -1,27 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, MouseEvent } from "react";
+
+type Item = {
+  id: number;
+  imgSrcSmall: string;
+  imgSrcLarge: string;
+  heading: string;
+  subheading: string;
+  title?: string;
+  subtitle?: string;
+};
+
+type AnimationStart = {
+  x: number;
+  y: number;
+  centerX: number;
+  centerY: number;
+} | null;
 
 export default function RadialLayout() {
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [animationStart, setAnimationStart] = useState(null);
-  const [returningItem, setReturningItem] = useState(null);
-  const centerRef = useRef(null);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [returningItem, setReturningItem] = useState<Item | null>(null);
+  const [animationStart, setAnimationStart] = useState<AnimationStart>(null);
+  const centerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const resetAllItems = () => {
-      if (window.scrollY) {
-        // setSelectedItem(null);
-        // setReturningItem(null);
-      }
-    };
-
-    window.addEventListener("scroll", resetAllItems);
-    return () => window.removeEventListener("scroll", resetAllItems);
-  }, []);
-
-  const leftItems = [
+  const leftItems: Item[] = [
     {
       id: 1,
       imgSrcSmall: "/recipies/midday-fuel-sm.png",
@@ -45,7 +50,7 @@ export default function RadialLayout() {
     },
   ];
 
-  const rightItems = [
+  const rightItems: Item[] = [
     {
       id: 4,
       imgSrcSmall: "/recipies/morning-boost-sm.png",
@@ -69,46 +74,15 @@ export default function RadialLayout() {
     },
   ];
 
-  // const handleItemClick = (item, event) => {
-  //   const itemElement = event.currentTarget;
-  //   const itemRect = itemElement.getBoundingClientRect();
-  //   const centerRect = centerRef.current.getBoundingClientRect();
-
-  //   // If there's already a selected item, mark it for return
-  //   if (selectedItem && selectedItem.id !== item.id) {
-  //     setReturningItem(selectedItem);
-
-  //     // After return animation completes, set the new selected item
-  //     setTimeout(() => {
-  //       setReturningItem(null);
-  //       setAnimationStart({
-  //         x: itemRect.left + itemRect.width / 2,
-  //         y: itemRect.top + itemRect.height / 2,
-  //         centerX: centerRect.left + centerRect.width / 2,
-  //         centerY: centerRect.top + centerRect.height / 2,
-  //       });
-  //       setSelectedItem(item);
-  //     }, 1000);
-  //   } else {
-  //     setAnimationStart({
-  //       x: itemRect.left + itemRect.width / 2,
-  //       y: itemRect.top + itemRect.height / 2,
-  //       centerX: centerRect.left + centerRect.width / 2,
-  //       centerY: centerRect.top + centerRect.height / 2,
-  //     });
-  //     setSelectedItem(item);
-  //   }
-  // };
-
-  const handleItemClick = (item, event) => {
+  const handleItemClick = (item: Item, event: MouseEvent<HTMLDivElement>) => {
     const itemElement = event.currentTarget;
     const itemRect = itemElement.getBoundingClientRect();
     const container = document.querySelector(".radial-container");
+    if (!container) return;
     const containerRect = container.getBoundingClientRect();
 
     if (selectedItem && selectedItem.id !== item.id) {
       setReturningItem(selectedItem);
-
       setTimeout(() => {
         setReturningItem(null);
         setAnimationStart({
@@ -141,7 +115,7 @@ export default function RadialLayout() {
     }
   };
 
-  const renderItem = (item, isLeft) => {
+  const renderItem = (item: Item) => {
     const isSelected = selectedItem?.id === item.id;
     const isReturning = returningItem?.id === item.id;
 
@@ -384,7 +358,7 @@ export default function RadialLayout() {
         <div className=" grid grid-cols-3 gap-8 items-center">
           {/* Left Column */}
           <div className="space-y-7 ">
-            {leftItems.map((item) => renderItem(item, true))}
+            {leftItems.map((item) => renderItem(item))}
           </div>
 
           {/* Center Circle */}
@@ -421,7 +395,7 @@ export default function RadialLayout() {
 
           {/* Right Column */}
           <div className="space-y-7">
-            {rightItems.map((item) => renderItem(item, false))}
+            {rightItems.map((item) => renderItem(item))}
           </div>
         </div>
       </div>

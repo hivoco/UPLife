@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import RecipeCard from "./RecipeCard";
-import { log } from "console";
 
 const Recipes = () => {
   const RecipesData = [

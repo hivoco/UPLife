@@ -1,4 +1,3 @@
-import { log } from "console";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -49,7 +48,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   return (
     <div className=" flex flex-col gap-7 xx  items-center ">
       {arr.map((recipe, index) => {
-        const { id, imgSrcSmall, imgSrcLarge, heading, subheading } = recipe;
+        const { id, imgSrcSmall,  heading, subheading } = recipe;
         return (
           <div onClick={() => setSelected(id)} className="" key={id}>
             <Image
