@@ -1,103 +1,142 @@
 import Image from "next/image";
+import Cards from "./components/Cards";
+import OverlayCard from "./components/OverlayCard";
+import Recipes from "./components/Recipes";
+import RadialLayout from "./components/RadialLayout";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative w-full mx-auto">
+      <video
+        src="/16-9.mp4"
+        autoPlay={true}
+        loop
+        muted
+        className="h-screen w-full object-cover"
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div
+        style={{
+          background:
+            "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
+        }}
+        className="absolute right-10 bottom-10 rounded-full w-fit border-[.5px] border-white p-3.5"
+      >
+        <Image
+          src="/whatsapp.png"
+          alt="WhatsApp Logo"
+          className="w-11 h-11"
+          width={44}
+          height={44}
+        />
+      </div>
+
+      <div className="pt-9 pb-18 bg-white text-black text-center w-full mx-auto">
+        <h1 className="font-normal text-[42px]/16 ">
+          What happens when you UP your Life?
+        </h1>
+
+        <h2 className="font-light text-2xl mt-[10px]">
+          Smart choice for a lighter, better you
+        </h2>
+
+        <Cards />
+      </div>
+
+      <div className="relative w-full pt-[56px] pb-[112px] text-center px-6">
+        <Image
+          src="/Group 13.png"
+          alt="bg F"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25"
+          width={44}
+          height={44}
+        />
+
+        <h1 className="font-normal text-[42px]/16 ">
+          What happens when you UP your Life?
+        </h1>
+        <h2 className="font-light text-2xl mt-[10px]">
+          Smart choice for a lighter, better you
+        </h2>
+
+        <div className="w-full flex justify-between items-center pt-[50px]">
+          <OverlayCard />
+          <OverlayCard />
+          <OverlayCard />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <div className="py-16 flex  justify-between px-6">
+        <section className="text-left">
+          <h1 className="font-normal text-[34px]/12">
+            From the house of World’s{" "}
+          </h1>
+          <h1 className="font-normal text-[34px]/12 ">
+            No.1 Basmati Rice Brand{" "}
+          </h1>
+
+          <p className="font-normal text-lg">
+            When tradition meets innovation, extraordinary wellness becomes
+            possible.
+          </p>
+        </section>
+
+        <video className="aspect-video w-[50vw]" controls autoPlay loop muted>
+          <source src="your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div className="w-full  flex justify-between gap-[6.7vw] px-16">
+        <Image
+          className="ml-[100px] h-[550px] w-auto"
+          width={300}
+          height={550}
+          src={"/uplife-orange-oil.png"}
+          alt="uplife-orange-oil"
+        />
+        <div className="w-1/2 pt-16">
+          <h1 className="font-normal text-5xl ">Your health, your product </h1>
+
+          <p className="font-light text-lg mt-4">
+            Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+            consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
+            dolor sit amet consectetur.{" "}
+          </p>
+        </div>
+      </div>
+
+      <div className="relative">
+        <Image
+          src="/recipies/top-curved-svg.svg"
+          alt="top svg curved"
+          width={1280}
+          height={100}
+          className="w-full h-auto"
+        />
+
+        {/* <Recipes /> */}
+        <RadialLayout />
+
+        <Image
+          src="/recipies/bottom-curved-svg.svg"
+          alt="top svg curved"
+          width={1280}
+          height={100}
+          className="w-full h-auto"
+        />
+      </div>
+
+      <div className="pt-11">
+        <h2
+        style={{
+          animation:" marquee 15s linear infinite"
+        }}
+        aria-roledescription="marquee"
+         className="font-normal text-[84px]/31.5 text-black whitespace-nowrap will-change-transform">
+          Real Families. Real Results. Real Transformations.
+        </h2>
+      </div>
     </div>
   );
 }
