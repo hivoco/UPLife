@@ -3,10 +3,12 @@ import Cards from "./components/Cards";
 import OverlayCard from "./components/OverlayCard";
 import Recipes from "./components/Recipes";
 import RadialLayout from "./components/RadialLayout";
+import Footer from "./components/Footer";
+import FooterCard from "./components/FooterCard";
 
 export default function Home() {
   return (
-    <div className="relative w-full mx-auto">
+    <div className="relative  w-full mx-auto">
       <video
         src="/16-9.mp4"
         autoPlay={true}
@@ -129,13 +131,20 @@ export default function Home() {
 
       <div className="pt-11">
         <h2
-        style={{
-          animation:" marquee 15s linear infinite"
-        }}
-        aria-roledescription="marquee"
-         className="font-normal text-[84px]/31.5 text-black whitespace-nowrap will-change-transform">
+          style={{
+            animation: " marquee 15s linear infinite"
+          }}
+          aria-roledescription="marquee"
+          className="font-normal text-[84px]/31.5 text-black whitespace-nowrap will-change-transform">
           Real Families. Real Results. Real Transformations.
         </h2>
+      </div>
+      <div className="bg-[#457E7F] relative mt-10 ">
+         <div className="absolute -top-[80px] w-full h-[80px] ">
+                        <Image src="/wave.png" alt="My image" fill className="object-fill " />
+                    </div>
+        <FooterCard />
+        <Footer />
       </div>
     </div>
   );
