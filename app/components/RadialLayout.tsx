@@ -378,9 +378,9 @@ export default function RadialLayout() {
         background:
           "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
       }}
-      className="relative radial-container min-h-screen  pt-16 pb-8 text-white whitespace-nowrap"
+      className="relative  radial-container pt-16 pb-8 text-white whitespace-nowrap"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto px-6  md:px-16">
         <div className=" grid grid-cols-3 gap-8 items-center">
           {/* Left Column */}
           <div className="space-y-7 ">

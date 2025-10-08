@@ -1,39 +1,74 @@
 import Image from "next/image";
 import Cards from "./components/Cards";
 import OverlayCard from "./components/OverlayCard";
-import Recipes from "./components/Recipes";
 import RadialLayout from "./components/RadialLayout";
 import Footer from "./components/Footer";
 import FooterCard from "./components/FooterCard";
+import CommunityBanner from "./components/CommunityBanner";
+import Faqs from "./components/Faqs";
+import BentoGrid from "./components/BentoGrid";
+import Navbar from "./components/NavBar";
 
 export default function Home() {
   return (
-    <div className="relative  w-full mx-auto">
-      <video
-        src="/16-9.mp4"
-        autoPlay={true}
-        loop
-        muted
-        className="h-screen w-full object-cover"
-      />
+    <div className="  w-full mx-auto">
+      <div className="h-svh relative">
+        <header className="container mx-auto px-6  md:px-16 pt-5 md:pt-10 absolute z-0 left-0 right-0 flex justify-between ">
+          <Image
+            src="/logo.png"
+            width={90}
+            height={100}
+            alt="logo uplife"
+            className="object-cover"
+          />
+          <Navbar />
+        </header>
 
-      <div
-        style={{
-          background:
-            "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
-        }}
-        className="absolute right-10 bottom-10 rounded-full w-fit border-[.5px] border-white p-3.5"
-      >
-        <Image
-          src="/whatsapp.png"
-          alt="WhatsApp Logo"
-          className="w-11 h-11"
-          width={44}
-          height={44}
+        <div className=" flex justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2  -translate-y-1/2 object-cover text-white">
+          <Image
+            src="/UPLIFE-LOGO.png"
+            width={450}
+            height={400}
+            alt="logo uplife"
+            className=" object-cover h-[48vh] w-auto"
+          />
+
+          <div className="text-center">
+            <h2 className="text-[40px]/15">Life at pace with your ambitions</h2>
+            <p className="text-base">
+              Scientifically crafted solutions that make healthy living
+              liberating, not limiting
+            </p>
+          </div>
+        </div>
+
+        <video
+          src="/16-9.mp4"
+          autoPlay={true}
+          loop
+          muted
+          className="h-screen w-full object-cover z-[-2] pointer-events-none"
         />
+        <div
+          style={{
+            background:
+              "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
+          }}
+          className=" absolute right-10 bottom-10 rounded-full w-fit border-[.5px] border-white p-3.5"
+        >
+          <Image
+            src="/whatsapp.png"
+            alt="WhatsApp Logo"
+            className="w-11 h-11"
+            width={44}
+            height={44}
+          />
+        </div>
       </div>
 
-      <div className="pt-9 pb-18 bg-white text-black text-center w-full mx-auto">
+      {/* hero section above this */}
+
+      <div className="pt-9 pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
         <h1 className="font-normal text-[42px]/16 ">
           What happens when you UP your Life?
         </h1>
@@ -45,7 +80,7 @@ export default function Home() {
         <Cards />
       </div>
 
-      <div className="relative w-full pt-[56px] pb-[112px] text-center px-6">
+      <div className="container mx-auto px-6  md:px-16 relative w-full pt-[56px] pb-[112px] text-center">
         <Image
           src="/Group 13.png"
           alt="bg F"
@@ -61,14 +96,14 @@ export default function Home() {
           Smart choice for a lighter, better you
         </h2>
 
-        <div className="w-full flex justify-between items-center pt-[50px]">
+        <div className="w-full flex justify-center gap-6 items-center pt-[50px]">
           <OverlayCard />
           <OverlayCard />
           <OverlayCard />
         </div>
       </div>
 
-      <div className="py-16 flex  justify-between px-6">
+      <div className="py-16 container mx-auto px-6  md:px-16 flex justify-between gap-4 items-center">
         <section className="text-left">
           <h1 className="font-normal text-[34px]/12">
             From the house of World’s{" "}
@@ -83,10 +118,13 @@ export default function Home() {
           </p>
         </section>
 
-        <video className="aspect-video w-[50vw]" controls autoPlay loop muted>
-          <source src="your-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <video
+          className="aspect-video w-[50vw] rounded-3xl"
+          src="/16-9.mp4"
+          autoPlay={true}
+          loop
+          muted
+        />
       </div>
 
       <div className="w-full  flex justify-between gap-[6.7vw] px-16">
@@ -117,7 +155,6 @@ export default function Home() {
           className="w-full h-auto"
         />
 
-        {/* <Recipes /> */}
         <RadialLayout />
 
         <Image
@@ -129,7 +166,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="pt-11">
+      {/* <div className="pt-11">
         <h2
           style={{
             animation: " marquee 15s linear infinite"
@@ -138,11 +175,28 @@ export default function Home() {
           className="font-normal text-[84px]/31.5 text-black whitespace-nowrap will-change-transform">
           Real Families. Real Results. Real Transformations.
         </h2>
+      </div> */}
+
+      <div className="pt-11">
+        <div className="overflow-hidden whitespace-nowrap">
+          <h2
+            aria-roledescription="marquee"
+            className="font-normal text-[84px]/31.5 text-black animate-marquee 
+          "
+          >
+            Real Families. Real Results. Real Transformations.
+          </h2>
+        </div>
+
+        <BentoGrid />
       </div>
+      <CommunityBanner />
+      <Faqs />
+
       <div className="bg-[#457E7F] relative mt-10 ">
-         <div className="absolute -top-[80px] w-full h-[80px] ">
-                        <Image src="/wave.png" alt="My image" fill className="object-fill " />
-                    </div>
+        <div className="absolute -top-[80px] w-full h-[80px] ">
+          <Image src="/wave.png" alt="My image" fill className="object-fill " />
+        </div>
         <FooterCard />
         <Footer />
       </div>

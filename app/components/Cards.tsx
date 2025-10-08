@@ -46,11 +46,9 @@ const Cards = () => {
   ];
 
   return (
-    <div className="min-h-screen p-4 md:p-8 ">
-      <div
-        className="flex w-full justify-between gap-2.5"
-        //    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-8 gap-4"
-      >
+    // <div className="p-4 md:p-8">
+    <div className="pt-9">
+      <div className="flex w-full justify-between gap-2.5">
         {cards.map((card, index) => (
           <div
             key={card.id}

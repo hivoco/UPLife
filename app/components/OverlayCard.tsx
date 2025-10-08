@@ -7,7 +7,7 @@ const OverlayCard = () => {
         background:
           "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 78.85%, rgba(0, 0, 0, 0.5) 100%)",
       }}
-      className="relative rounded-4xl outline-2 outline-[#20695F] w-[380px] h-[277px] bg-gray-500 text-white text-left"
+      className="relative rounded-4xl outline-2 outline-[#20695F] w-[380px] h-[277px]  bg-gray-500 text-white text-left"
     >
       <Image
         className="rounded-4xl object-cover"
