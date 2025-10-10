@@ -35,16 +35,16 @@ const Faqs = () => {
 
   return (
     <div className="py-13 container mx-auto px-6  md:px-16 space-y-11">
-      <div className="capitalize flex items-center justify-between">
-        <h2 className="text-[42px]/16 font-normal">
+      <div className="capitalize flex flex-col md:flex-row md:items-center justify-between">
+        <h2 className="text-2xl md:text-[42px]/16 font-normal">
           All Your Uplife Questions - Answered
         </h2>
 
-        <div className="relative w-72">
+        <div className="relative  w-full md:w-72 ">
           <input
             type="text"
             placeholder="Search your keyword here"
-            className="w-full px-4 py-4 pl-10 text-base/5 placeholder:text-gray-400  border border-black rounded-full outline-none capitalize"
+            className="w-full p-3 md:p-4  pl-10 md:pl-11 text-base/5 placeholder:text-gray-400  border border-black rounded-full outline-none capitalize"
           />
           <svg
             className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black"
@@ -67,11 +67,11 @@ const Faqs = () => {
             }}
             className="rounded-t-3xl p-6 flex gap-11 transition-all duration-1000 ease-in-out"
           >
-            <span className="font-bold text-[40px]/12">0{faq.id}</span>
+            <span className="font-bold text-2xl  md:text-[40px]/12">0{faq.id}</span>
 
             <div className="w-full space-y-2.5">
               <div className="w-full flex items-center justify-between">
-                <h2 className="text-2xl">{faq.question}</h2>
+                <h2 className="text-ld md:text-2xl">{faq.question}</h2>
                 {selectedQuesId === faq.id ? (
                   <svg
                   className="cursor-pointer"
@@ -129,7 +129,7 @@ const Faqs = () => {
               )} */}
 
               <p
-                className={`text-base text-gray-800/85 overflow-hidden transition-all duration-1000 ease-in-out ${
+                className={`text-sm md:text-base text-gray-800/85 overflow-hidden transition-all duration-1000 ease-in-out ${
                   selectedQuesId === faq.id
                     ? "max-h-40 opacity-100"
                     : "max-h-0 opacity-0"
