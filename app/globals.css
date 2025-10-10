@@ -10,7 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
 }
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -39,13 +41,21 @@ body {
   animation: marquee 15s linear infinite;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  transition: all 0.6s ease-in-out;
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.vertical-text:hover {
-  writing-mode: horizontal-tb;
-  transform: rotate(0deg);
+.animate-slide-in {
+  animation: slide-in 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+

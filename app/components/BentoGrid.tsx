@@ -11,7 +11,6 @@ const BentoGrid = () => {
           width={800}
           height={600}
           alt="Main visual"
-          quality={100}
         />
       </div>
 
@@ -20,10 +19,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/2.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Billboard"
-          quality={100}
         />
       </div>
 
@@ -32,10 +30,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/3.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Stack 1"
-          quality={100}
         />
       </div>
 
@@ -44,10 +41,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/4.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Stack 2"
-          quality={100}
         />
       </div>
 
@@ -56,10 +52,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/5.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Myth"
-          quality={100}
         />
       </div>
 
@@ -67,10 +62,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/6.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Product"
-          quality={100}
         />
       </div>
 
@@ -78,10 +72,9 @@ const BentoGrid = () => {
         <Image
           className="w-full h-full object-cover rounded-3xl"
           src="/bento-grid/7.png"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="Family"
-          quality={100}
         />
       </div>
     </div>

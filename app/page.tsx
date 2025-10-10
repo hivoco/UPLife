@@ -7,66 +7,13 @@ import FooterCard from "./components/FooterCard";
 import CommunityBanner from "./components/CommunityBanner";
 import Faqs from "./components/Faqs";
 import BentoGrid from "./components/BentoGrid";
-import Navbar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import ImageExpander from "./components/ImageExpander";
 
 export default function Home() {
   return (
-    <div className="  w-full mx-auto">
-      <div className="h-svh relative">
-        <header className="container mx-auto px-6  md:px-16 pt-5 md:pt-10 absolute z-0 left-0 right-0 flex justify-between gap-2.5 ">
-          <Image
-            src="/logo.png"
-            width={90}
-            height={100}
-            alt="logo uplife"
-            className="object-cover cursor-pointer"
-          />
-          <Navbar />
-        </header>
-
-        <div className="flex justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2  -translate-y-1/2 object-cover text-white ">
-          <Image
-            src="/UPLIFE-LOGO.png"
-            width={450}
-            height={400}
-            alt="logo uplife"
-            className=" object-cover h-[48vh] w-auto"
-          />
-
-          <div className="text-center bg-black/30 backdrop-blur-[10px] p-2.5 rounded-xl space-y-1.5">
-            <h2 className="text-[40px]/15">Life at pace with your ambitions</h2>
-            <p className="text-base">
-              Scientifically crafted solutions that make healthy living
-              liberating, not limiting
-            </p>
-          </div>
-        </div>
-
-        <video
-          src="/16-9.mp4"
-          autoPlay={true}
-          loop
-          muted
-          className="h-screen w-full object-cover z-[-2] pointer-events-none"
-        />
-        <div
-          style={{
-            background:
-              "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
-          }}
-          className=" absolute right-9 bottom-9 rounded-full w-fit border-[.5px] border-white p-3.5"
-        >
-          <Image
-            src="/whatsapp.png"
-            alt="WhatsApp Logo"
-            className="w-11 h-11"
-            width={44}
-            height={44}
-          />
-        </div>
-      </div>
-
-      {/* hero section above this */}
+    <div className="w-full mx-auto">      
+      <HeroSection/>
 
       <div className="pt-9 pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
         <h1 className="font-normal text-[42px]/16 ">
@@ -79,27 +26,9 @@ export default function Home() {
 
         <Cards />
       </div>
-
-      <div className="container mx-auto px-6  md:px-16 relative w-full pt-[56px] pb-[112px] text-center">
-        <Image
-          src="/Group 13.png"
-          alt="background F uplife logo"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25 pointer-events-none"
-          width={600}
-          height={600}
-          quality={100}
-        />
-
-        <h1 className="font-normal text-[42px]/16 ">
-          What happens when you UP your Life?
-        </h1>
-        <h2 className="font-light text-2xl mt-[10px]">
-          Smart choice for a lighter, better you
-        </h2>
-
-        <OverlayCard />
-      </div>
-
+    
+      <ImageExpander/>
+      
       <div className="py-16 container mx-auto px-6  md:px-16 flex justify-between gap-4 items-center">
         <section className="text-left">
           <h1 className="font-normal text-[34px]/12">
@@ -124,35 +53,38 @@ export default function Home() {
         />
       </div>
 
-      {/* work */}
-      <div className="w-full  flex justify-between gap-[6.7vw] px-16">
-        <Image
-          className="ml-[100px] h-[550px] w-auto"
-          width={300}
-          height={550}
-          src={"/uplife-orange-oil.png"}
-          alt="uplife-orange-oil"
-        />
-        <div className="w-1/2 pt-16">
-          <h1 className="font-normal text-5xl ">Your health, your product </h1>
-
-          <p className="font-light text-lg mt-4">
-            Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-            consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
-            dolor sit amet consectetur.{" "}
-          </p>
+      <div className="relative pb-[3.5vh] w-full">
+        <div className="container mx-auto px-6  md:px-16 flex justify-between gap-[6.7vw]">
+          <Image
+            className="md:ml-[100px] h-svh md:max-h-[550px] w-auto"
+            width={240}
+            height={550}
+            src={"/uplife-orange-oil.png"}
+            alt="uplife-orange-oil"
+          />
+          <div className="w-1/2 space-y-4 pt-16">
+            <h1 className="font-normal text-5xl ">
+              Your health, your product{" "}
+            </h1>
+            <p className="font-light text-lg ">
+              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+              consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
+              dolor sit amet consectetur.{" "}
+            </p>
+          </div>
         </div>
+
+        <Image
+          className="absolute z-[-1] w-full h-[55%] bottom-0 left-0 right-0 object-center"
+          width={1280}
+          height={300}
+          // src={"/fluid-wave.png"}
+          src={"/fluid-wave-green-top-gradient.png"}
+          alt="fluid-wave"
+        />
       </div>
 
       <div className="relative">
-        <Image
-          src="/recipies/top-curved-svg.svg"
-          alt="top svg curved"
-          width={1280}
-          height={100}
-          className="w-full h-auto"
-        />
-
         <RadialLayout />
 
         <Image
@@ -163,17 +95,6 @@ export default function Home() {
           className="w-full h-auto"
         />
       </div>
-
-      {/* <div className="pt-11">
-        <h2
-          style={{
-            animation: " marquee 15s linear infinite"
-          }}
-          aria-roledescription="marquee"
-          className="font-normal text-[84px]/31.5 text-black whitespace-nowrap will-change-transform">
-          Real Families. Real Results. Real Transformations.
-        </h2>
-      </div> */}
 
       <div className="pt-11">
         <div className="overflow-hidden whitespace-nowrap">

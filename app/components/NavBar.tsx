@@ -1,13 +1,19 @@
-const Navbar = () => {
+const Navbar = ({ animation }) => {
   const menuItems = ["Home", "Our Products", "About us", "Blogs", "Contact us"];
 
   return (
-    <nav className="w-fit flex justify-center gap-4 bg-transparent items-start">
+    <nav
+      className={`flex justify-between gap-6 bg-transparent items-start
+      transition-transform duration-1000 ease-out
+      ${animation ? "" : "-translate-y-[100%] opacity-0"}
+    `}
+    >
       {menuItems.map((item) => (
         <button
           key={item}
           className="
-            min-w-[140px]
+          whitespace-nowrap
+          text-center
             px-4 py-2
             rounded-full
             text-base/5
