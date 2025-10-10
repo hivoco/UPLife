@@ -100,7 +100,7 @@ export default function Home() {
         <div className="overflow-hidden whitespace-nowrap">
           <h2
             aria-roledescription="marquee"
-            className="font-normal text-[84px]/31.5 text-black animate-marquee 
+            className="font-normal text-5xl md:text-[84px]/31.5 text-black animate-marquee 
           "
           >
             Real Families. Real Results. Real Transformations.
