@@ -28,24 +28,24 @@ export default function Home() {
       </div>
     
       <ImageExpander/>
-      
-      <div className="py-16 container mx-auto px-6  md:px-16 flex justify-between gap-4 items-center">
-        <section className="text-left">
-          <h1 className="font-normal text-[34px]/12">
+
+      <div className="py-16 container mx-auto px-6  md:px-16   flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
+        <section className="text-center md:text-left">
+          <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12 ">
             From the house of World’s{" "}
           </h1>
-          <h1 className="font-normal text-[34px]/12 ">
+          <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12">
             No.1 Basmati Rice Brand{" "}
           </h1>
 
-          <p className="font-normal text-lg">
+          <p className="font-light md:font-normal text-xs md:text-lg">
             When tradition meets innovation, extraordinary wellness becomes
             possible.
           </p>
         </section>
 
         <video
-          className="aspect-video w-[45vw] rounded-3xl"
+          className="aspect-[9/16]  md:aspect-video object-cover md:object-contain w-full md:w-[45vw] rounded-3xl"
           src="/16-9.mp4"
           autoPlay={true}
           loop
@@ -53,7 +53,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative pb-[3.5vh] w-full">
+      <div className="hidden md:block relative pb-[3.5vh] w-full">
         <div className="container mx-auto px-6  md:px-16 flex justify-between gap-[6.7vw]">
           <Image
             className="md:ml-[100px] h-svh md:max-h-[550px] w-auto"
@@ -85,7 +85,7 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <RadialLayout />
+        {/* <RadialLayout /> */}
 
         <Image
           src="/recipies/bottom-curved-svg.svg"

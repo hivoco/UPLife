@@ -4,7 +4,7 @@ import Navbar from "./NavBar";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
-  const [animation, setAnimation] = useState(false);
+  const [animation, setAnimation] = useState<boolean>(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimation(true);
@@ -28,18 +28,19 @@ const HeroSection = () => {
         <Navbar animation={animation} />
       </header>
 
-      <div className=" flex justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 object-cover text-white ">
+      <div className="flex flex-col md:flex-row  justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2 md:left-1/2 md:-translate-x-1/2  -translate-y-1/2 object-cover text-white ">
         <Image
           src="/UPLIFE-LOGO.png"
           width={450}
           height={400}
           alt="logo uplife"
-          className={`object-cover h-[48vh] w-auto 
+          className={`object-cover h-[30svh] mx-auto md:m-0 md:h-[48vh] w-auto 
             transition-transform duration-1000 ease-in-out
             ${animation ? " scale-100 " : "scale-125 translate-x-[140%]"}
         `}
           priority={true}
         />
+        
 
           <div
             className={`text-center bg-black/30 backdrop-blur-[10px] p-2.5 rounded-xl space-y-1.5 
@@ -70,7 +71,7 @@ const HeroSection = () => {
           background:
             "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
         }}
-        className=" absolute right-9 bottom-9 rounded-full w-fit border-[.5px] border-white p-3.5"
+        className=" absolute right-7 bottom-7 md:right-9 md:bottom-9 rounded-full w-fit border-[.5px] border-white p-3.5"
       >
         <Image
           src="/whatsapp.png"
