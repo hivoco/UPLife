@@ -2,7 +2,7 @@ const Navbar = () => {
   const menuItems = ["Home", "Our Products", "About us", "Blogs", "Contact us"];
 
   return (
-    <nav className="w-fit flex justify-center gap-6 bg-transparent items-start">
+    <nav className="w-fit flex justify-center gap-4 bg-transparent items-start">
       {menuItems.map((item) => (
         <button
           key={item}
@@ -13,10 +13,10 @@ const Navbar = () => {
             text-base/5
             font-normal
             outline outline-white
-            bg-white/20
+            bg-black/50
             text-white
-            backdrop-blur-xs
-            hover:bg-white/50
+            backdrop-blur-[10px]
+            hover:bg-black/30
             transition
             duration-300
             ease-in-out

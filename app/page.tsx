@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="  w-full mx-auto">
       <div className="h-svh relative">
-        <header className="container mx-auto px-6  md:px-16 pt-5 md:pt-10 absolute z-0 left-0 right-0 flex justify-between ">
+        <header className="container mx-auto px-6  md:px-16 pt-5 md:pt-10 absolute z-0 left-0 right-0 flex justify-between gap-2.5 ">
           <Image
             src="/logo.png"
             width={90}
@@ -24,7 +24,7 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <div className=" flex justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2  -translate-y-1/2 object-cover text-white">
+        <div className="flex justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2  -translate-y-1/2 object-cover text-white ">
           <Image
             src="/UPLIFE-LOGO.png"
             width={450}
@@ -33,7 +33,7 @@ export default function Home() {
             className=" object-cover h-[48vh] w-auto"
           />
 
-          <div className="text-center">
+          <div className="text-center bg-black/30 backdrop-blur-[10px] p-2.5 rounded-xl space-y-1.5">
             <h2 className="text-[40px]/15">Life at pace with your ambitions</h2>
             <p className="text-base">
               Scientifically crafted solutions that make healthy living
@@ -54,7 +54,7 @@ export default function Home() {
             background:
               "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
           }}
-          className=" absolute right-10 bottom-10 rounded-full w-fit border-[.5px] border-white p-3.5"
+          className=" absolute right-9 bottom-9 rounded-full w-fit border-[.5px] border-white p-3.5"
         >
           <Image
             src="/whatsapp.png"
@@ -83,10 +83,11 @@ export default function Home() {
       <div className="container mx-auto px-6  md:px-16 relative w-full pt-[56px] pb-[112px] text-center">
         <Image
           src="/Group 13.png"
-          alt="bg F"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25"
-          width={44}
-          height={44}
+          alt="background F uplife logo"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25 pointer-events-none"
+          width={600}
+          height={600}
+          quality={100}
         />
 
         <h1 className="font-normal text-[42px]/16 ">
@@ -96,11 +97,7 @@ export default function Home() {
           Smart choice for a lighter, better you
         </h2>
 
-        <div className="w-full flex justify-center gap-6 items-center pt-[50px]">
-          <OverlayCard />
-          <OverlayCard />
-          <OverlayCard />
-        </div>
+        <OverlayCard />
       </div>
 
       <div className="py-16 container mx-auto px-6  md:px-16 flex justify-between gap-4 items-center">
@@ -127,7 +124,7 @@ export default function Home() {
         />
       </div>
 
-{/* work */}
+      {/* work */}
       <div className="w-full  flex justify-between gap-[6.7vw] px-16">
         <Image
           className="ml-[100px] h-[550px] w-auto"

@@ -11,47 +11,57 @@ const Cards = () => {
       title: "Lighter meals, sustained energy",
       description:
         "Light food fuels body, keeps you active and energized all day.",
-      // image: "/images/couple-dining.jpg",
-      image:"/cards/1.jpg",
+      image: "/cards/1.png",
       size: "large",
     },
     {
       id: 2,
       title: "Improved digestion, better sleep",
-      image:"/cards/2.jpg",
+      description:
+        "Light food fuels body, keeps you active and energized all day.",
+      image: "/cards/2.png",
       size: "small",
     },
     {
       id: 3,
       title: "Mindful eating, stress-free life",
-      image:"/cards/3.png",
+      description:
+        "Light food fuels body, keeps you active and energized all day.",
+      image: "/cards/3.png",
       size: "small",
     },
     {
       id: 4,
       title: "Renewed strength, joyful living",
-      image:"/cards/4.png",
+      description:
+        "Light food fuels body, keeps you active and energized all day.",
+
+      image: "/cards/4.png",
       size: "small",
     },
     {
       id: 5,
       title: "Daily balance, long-term wellness",
-      image:"/cards/5.jpg",
+      description:
+        "Light food fuels body, keeps you active and energized all day.",
+
+      image: "/cards/5.png",
       size: "small",
     },
     {
       id: 6,
       title: "Nourishing wellness in habits",
-      image:"/cards/6.jpg",
+      description:
+        "Light food fuels body, keeps you active and energized all day.",
+      image: "/cards/6.jpeg",
       size: "small",
     },
   ];
 
   return (
-    // <div className="p-4 md:p-8">
     <div className="pt-9">
-      <div className="flex w-full justify-between gap-2.5">
-        {cards.map((card, index) => (
+      <div className="flex w-full h-full justify-between gap-2.5">
+        {cards.map((card) => (
           <div
             key={card.id}
             onMouseEnter={() => setHoveredCard(card.id)}
@@ -63,57 +73,68 @@ const Cards = () => {
                   : "calc(12.5% - 0.5rem)",
             }}
             className={`
-              group relative overflow-hidden rounded-2xl shadow-lg lg:row-span-1 min-h-[500px]
-              transition-all  duration-1000 ease-in-out  
+              group relative overflow-hidden rounded-2xl !h-[70vh]  min-h-[500px]
+              transition-all  duration-700 ease-in-out  
             `}
           >
             <div
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                index === 0
-                  ? "bg-gradient-to-br from-indigo-600 to-purple-700"
-                  : index === 1
-                  ? "bg-gradient-to-br from-rose-500 to-pink-600"
-                  : index === 2
-                  ? "bg-gradient-to-br from-cyan-500 to-blue-600"
-                  : index === 3
-                  ? "bg-gradient-to-br from-amber-500 to-orange-600"
-                  : index === 4
-                  ? "bg-gradient-to-br from-violet-600 to-purple-700"
-                  : "bg-gradient-to-br from-emerald-500 to-teal-600"
-              }`}
+              className={`absolute w-full h-full z-0 inset-0  transition-all duration-700 ease-in-out`}
             >
-              {/* <div className="absolute inset-0 bg-black/30 transition-opacity duration-700" /> */}
-
               <Image
                 src={card.image}
                 alt="Logo"
+                // width={hoveredCard === card.id ? 430 : 140}
+                // height={500}
                 fill
                 className="object-cover"
               />
             </div>
 
-            <div className="relative h-full flex items-end p-5">
+            <div
+              style={{
+                background:
+                  hoveredCard === card.id
+                    ? "linear-gradient(180deg, rgba(255, 255, 255, 0) 53%, rgba(81, 81, 81, 0.578558) 68.42%, rgba(0, 0, 0, 0.88) 79.98%, #000000 96.15%)"
+                    : "rgba(0, 0, 0, 0.45)",
+              }}
+              className="absolute inset-0 transition-all duration-700  ease-in-out"
+            />
+
+            <div
+              className={` relative z-10 text-white text-left h-full w-full flex flex-col  p-6
+                transform transition-all duration-1000 delay-75 ease-in-out 
+                ${
+                  hoveredCard === card.id
+                    ? "justify-end"
+                    : "-rotate-90  items-center justify-center"
+                }
+              `}
+            >
               <h3
                 className={`
-                  text-white font-semibold text-base md:text-lg leading-tight 
-                  writing-mode-vertical transform rotate-180
-                  transition-all duration-700 ease-in-out
-                  ${hoveredCard === card.id ? "scale-110" : "scale-100"}
+                    text-base md:text-lg 
+                ${hoveredCard === card.id ? "w-full" : "whitespace-nowrap"}
                 `}
               >
                 {card.title}
               </h3>
+
+              <h4
+                className={`text-sms font-light 
+                    transform transition-all ease-in-out
+                   ${
+                     hoveredCard === card.id
+                       ? "opacity-100 size-auto delay-1000 duration-1000"
+                       : "duration-75 opacity-0 size-0"
+                   }
+                `}
+              >
+                {card.description}
+              </h4>
             </div>
           </div>
         ))}
       </div>
-
-      <style jsx>{`
-        .writing-mode-vertical {
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-        }
-      `}</style>
     </div>
   );
 };
