@@ -16,11 +16,11 @@ export default function Home() {
       <HeroSection/>
 
       <div className="pt-9 pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
-        <h1 className="font-normal text-[42px]/16 ">
+        <h1 className="font-normal text-2xl/8 md:text-[42px]/16 ">
           What happens when you UP your Life?
         </h1>
 
-        <h2 className="font-light text-2xl mt-[10px]">
+        <h2 className="font-light text-sm md:text-2xl mt-[10px]">
           Smart choice for a lighter, better you
         </h2>
 

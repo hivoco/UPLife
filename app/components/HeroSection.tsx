@@ -28,7 +28,7 @@ const HeroSection = () => {
         <Navbar animation={animation} />
       </header>
 
-      <div className="flex flex-col md:flex-row  justify-between items-center w-full container mx-auto px-6  md:px-16 absolute top-1/2 md:left-1/2 md:-translate-x-1/2  -translate-y-1/2 object-cover text-white ">
+      <div className="flex gap-[10vh] md:gap-0 flex-col md:flex-row  justify-between items-center w-full container mx-auto px-6  md:px-16 absolute  top-1/2 -translate-y-1/4  md:left-1/2 md:-translate-x-1/2  md:-translate-y-1/2 object-cover text-white ">
         <Image
           src="/UPLIFE-LOGO.png"
           width={450}
@@ -40,20 +40,21 @@ const HeroSection = () => {
         `}
           priority={true}
         />
-        
 
-          <div
-            className={`text-center bg-black/30 backdrop-blur-[10px] p-2.5 rounded-xl space-y-1.5 
+        <div
+          className={`text-center bg-black/30 backdrop-blur-[10px] p-2.5 rounded-xl space-y-1.5 
             transition-transform duration-1000 ease-in-out
             ${animation ? "opacity-100" : "translate-x-[100%] opacity-0"}
         `}
-          >
-            <h2 className="text-[40px]/15">Life at pace with your ambitions</h2>
-            <p className="text-base">
-              Scientifically crafted solutions that make healthy living
-              liberating, not limiting
-            </p>
-          </div>
+        >
+          <h2 className="text-lg md:text-[40px]/15 ">
+            Life at pace with your ambitions
+          </h2>
+          <p className="font-light md:font-normal text-base ">
+            Scientifically crafted solutions that make healthy living
+            liberating, not limiting
+          </p>
+        </div>
       </div>
 
       <video
@@ -71,12 +72,12 @@ const HeroSection = () => {
           background:
             "linear-gradient(90deg, #BAB0F2 0%, #CAC4E8 0.01%, #9989D1 100%)",
         }}
-        className=" absolute right-7 bottom-7 md:right-9 md:bottom-9 rounded-full w-fit border-[.5px] border-white p-3.5"
+        className="fixed z-50 right-7 bottom-7 md:right-9 md:bottom-9 rounded-full w-fit border-[.5px] border-white p-2.5 md:p-3.5"
       >
         <Image
           src="/whatsapp.png"
           alt="WhatsApp Logo"
-          className="w-11 h-11"
+          className="w-8 h-8 md:w-11 md:h-11"
           width={44}
           height={44}
         />

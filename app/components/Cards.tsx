@@ -60,21 +60,29 @@ const Cards = () => {
 
   return (
     <div className="pt-9">
-      <div className="flex w-full h-full justify-between gap-2.5">
+      <div className="flex w-full h-full justify-between gap-2.5  md:whitespace-nowrap overflow-x-auto overflow-y-hidden md:overflow-visible">
         {cards.map((card) => (
           <div
             key={card.id}
-            onMouseEnter={() => setHoveredCard(card.id)}
-            onMouseLeave={() => setHoveredCard(1)}
-            style={{
-              width:
-                hoveredCard === card.id
-                  ? "calc(37.5% - 0.5rem)"
-                  : "calc(12.5% - 0.5rem)",
-            }}
-            className={`
+            // onMouseEnter={() => setHoveredCard(card.id)}
+            // onMouseLeave={() => setHoveredCard(1)}
+
+            onTouchStart={() => setHoveredCard(card.id)}
+            // onTouchEnd={() => setHoveredCard(1)}
+            // style={{
+            //   width:
+            //     hoveredCard === card.id
+            //       ? "calc(37.5% - 0.5rem)"
+            //       : "calc(12.5% - 0.5rem)",
+            // }}
+            className={`shrink-0
               group relative overflow-hidden rounded-2xl !h-[70vh]  min-h-[500px]
-              transition-all  duration-700 ease-in-out  
+              transition-all  duration-700 ease-in-out 
+              ${
+                hoveredCard === card.id
+                  ? "w-[calc(60%-0.5rem)] md:w-[calc(37.5%-0.5rem)]"
+                  : "w-[calc(20%-0.5rem)]  md:w-[calc(12.5%-0.5rem)]"
+              } 
             `}
           >
             <div
@@ -112,7 +120,7 @@ const Cards = () => {
             >
               <h3
                 className={`
-                    text-base md:text-lg 
+                    text-xs md:text-lg 
                 ${hoveredCard === card.id ? "w-full" : "whitespace-nowrap"}
                 `}
               >
@@ -120,7 +128,7 @@ const Cards = () => {
               </h3>
 
               <h4
-                className={`text-sms font-light 
+                className={`text-[8px]/3  md:text-sm font-light 
                     transform transition-all ease-in-out
                    ${
                      hoveredCard === card.id
