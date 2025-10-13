@@ -14,7 +14,7 @@ interface OverlayCardProps {
 
 const OverlayCard = ({ cards, setSelectedCardId }: OverlayCardProps) => {
   return (
-    <div className="w-full flex justify-center gap-6 items-center pt-[50px]">
+    <div className="w-full flex flex-col md:flex-row  justify-center gap-3.5 md:gap-6 items-center pt-7 md:pt-[50px]">
       {cards.map((card) => (
         <div
           onClick={() => setSelectedCardId(card.id)}
@@ -23,7 +23,7 @@ const OverlayCard = ({ cards, setSelectedCardId }: OverlayCardProps) => {
             background:
               "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 78.85%, rgba(0, 0, 0, 0.5) 100%)",
           }}
-          className="relative rounded-4xl outline-2 outline-[#20695F] h-[40vh] bg-gray-500 text-white text-left"
+          className="relative  rounded-4xl outline-2 outline-[#20695F] h-[40vh]  text-white text-left"
         >
           <Image
             className="rounded-4xl object-cover h-full w-full"
@@ -33,11 +33,15 @@ const OverlayCard = ({ cards, setSelectedCardId }: OverlayCardProps) => {
             alt={"image"}
           />
 
-          <div className="absolute bottom-0 left-0 p-1 md:p-4">
+          <div className="absolute bottom-0  left-0 p-4">
             <h2 className="font-normal text-[28px]/10  uppercase">
               {card.title}
             </h2>
             <h3 className="font-light text-xs/4.5">{card.description}</h3>
+          </div>
+
+          <div className="absolute z-1 rounded-4xl inset-0 bg-black/10  ">
+
           </div>
         </div>
       ))}

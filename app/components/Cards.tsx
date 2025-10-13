@@ -59,7 +59,7 @@ const Cards = () => {
   ];
 
   return (
-    <div className="pt-9">
+    <div className="pt-6 md:pt-9">
       <div className="flex w-full h-full justify-between gap-2.5  md:whitespace-nowrap overflow-x-auto overflow-y-hidden md:overflow-visible">
         {cards.map((card) => (
           <div
@@ -76,11 +76,11 @@ const Cards = () => {
             //       : "calc(12.5% - 0.5rem)",
             // }}
             className={`shrink-0
-              group relative overflow-hidden rounded-2xl !h-[70vh]  min-h-[500px]
+              group relative overflow-hidden rounded-2xl !h-[34svh]  md:!h-[70vh]  md:min-h-[500px]
               transition-all  duration-700 ease-in-out 
               ${
                 hoveredCard === card.id
-                  ? "w-[calc(60%-0.5rem)] md:w-[calc(37.5%-0.5rem)]"
+                  ? "w-[calc(80%-0.5rem)] md:w-[calc(37.5%-0.5rem)]"
                   : "w-[calc(20%-0.5rem)]  md:w-[calc(12.5%-0.5rem)]"
               } 
             `}
@@ -91,8 +91,6 @@ const Cards = () => {
               <Image
                 src={card.image}
                 alt="Logo"
-                // width={hoveredCard === card.id ? 430 : 140}
-                // height={500}
                 fill
                 className="object-cover"
               />

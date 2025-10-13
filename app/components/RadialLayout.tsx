@@ -92,7 +92,7 @@ export default function RadialLayout() {
           centerY: 64,
         });
         setSelectedItem(item);
-      }, 1000);
+      }, 500);
     } else {
       setAnimationStart({
         x: itemRect.left + itemRect.width / 2 - containerRect.left,
@@ -128,10 +128,10 @@ export default function RadialLayout() {
           }`}
           onClick={(e) => handleItemClick(item, e)}
         >
-          <div className=" rounded-full  flex items-center justify-center">
+          <div className="rounded-full flex items-center justify-center">
             <div className={` rounded-full `}>
               <Image
-                className=" object-cover rounded-full"
+                className={`object-cover rounded-full `}
                 src={item.imgSrcLarge}
                 width={150}
                 height={150}
@@ -189,11 +189,8 @@ export default function RadialLayout() {
                   height: 112px;
                 }
                 100% {
-                  // width: 300px;
-                  // height: 300px;
                   width: 500px;
                   height: 500px;
-
                 }
               }
               
@@ -214,9 +211,11 @@ export default function RadialLayout() {
 
             <div className="pointer-events-auto">
               <div
-                className="rounded-full flex items-center justify-center cursor-pointer border-2 border-dashed border-white/60"
+                className="relative rounded-full flex items-center justify-center cursor-pointer  border-white/60
+                "
                 onClick={handleCloseSelected}
               >
+                <div className="absolute inset-0 border-2 border-dashed rounded-full [animation:fadeIn_700ms_ease-in-out_forwards]"></div>
                 <Image
                   style={{
                     animation: `growInner-${item.id} 700ms ease-in-out forwards`,
@@ -257,8 +256,8 @@ export default function RadialLayout() {
             style={{
               left: `${animationStart.centerX}px`,
               top: `${animationStart.centerY}px`,
-              transform: "translate(-50%, -50%)",
-              animation: `returnToOrigin-${item.id} 700ms ease-in-out forwards`,
+              transform: "translate(-50%,-50%)",
+              animation: `returnToOrigin-${item.id} 499ms ease-in-out forwards`,
             }}
           >
             <style>{`
@@ -266,8 +265,13 @@ export default function RadialLayout() {
                 0% {
                   left: ${animationStart.centerX}px;
                   top: ${animationStart.centerY}px;
-                  opacity:100;
+                  opacity:1;
                 }
+
+                70% {
+                opacity:0;
+                }
+
                 100% {
                   left: ${animationStart.x}px;
                   top: ${animationStart.y}px;
@@ -352,7 +356,7 @@ export default function RadialLayout() {
         background:
           "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
       }}
-      className="relative  radial-container pt-16 pb-8 text-white whitespace-nowrap"
+      className="relative radial-container pt-16 pb-8 text-white whitespace-nowrap"
     >
       <div className=" px-6  md:px-16">
         <div className=" grid grid-cols-3 gap-8 items-center">

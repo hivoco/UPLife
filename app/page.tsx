@@ -12,10 +12,10 @@ import ImageExpander from "./components/ImageExpander";
 
 export default function Home() {
   return (
-    <div className="w-full mx-auto">      
-      <HeroSection/>
+    <div className="w-full mx-auto">
+      <HeroSection />
 
-      <div className="pt-9 pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
+      <div className="py-6 md:pt-9  md:pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
         <h1 className="font-normal text-2xl/8 md:text-[42px]/16 ">
           What happens when you UP your Life?
         </h1>
@@ -26,8 +26,8 @@ export default function Home() {
 
         <Cards />
       </div>
-    
-      <ImageExpander/>
+
+      <ImageExpander />
 
       <div className="py-6 md:py-16 container mx-auto px-6  md:px-16   flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
         <section className="text-center md:text-left">
@@ -53,20 +53,20 @@ export default function Home() {
         />
       </div>
 
-      <div className="hidden md:block relative pb-[3.5vh] w-full">
-        <div className="container mx-auto px-6  md:px-16 flex justify-between gap-[6.7vw]">
+      <div className=" md:block relative pb-[3.5vh] w-full">
+        <div className="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between gap-7 md:gap-[6.7vw]">
           <Image
-            className="md:ml-[100px] h-svh md:max-h-[550px] w-auto"
+            className=" md:ml-[100px] h-[37svh] md:h-svh  md:max-h-[550px] w-auto object-contain order-2 md:order-0"
             width={240}
             height={550}
             src={"/uplife-orange-oil.png"}
             alt="uplife-orange-oil"
           />
-          <div className="w-1/2 space-y-4 pt-16">
-            <h1 className="font-normal text-5xl ">
+          <div className="w-full md:w-1/2  space-y-2 md:space-y-4 pt-6 md:pt-16 order-1 md:order-0">
+            <h1 className="font-normal text-2xl md:text-5xl ">
               Your health, your product{" "}
             </h1>
-            <p className="font-light text-lg ">
+            <p className="font-light text-center md:text-left text-sm md:text-lg">
               Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
               consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
               dolor sit amet consectetur.{" "}
@@ -75,12 +75,12 @@ export default function Home() {
         </div>
 
         <Image
-          className="absolute z-[-1] w-full h-[55%] bottom-0 left-0 right-0 object-center"
+          className="absolute z-[-1] w-full mx-auto md:m-0 h-[27svh] md:h-[55%] inset-0 top-auto object-cover md:object-center"
           width={1280}
           height={300}
-          // src={"/fluid-wave.png"}
           src={"/fluid-wave-green-top-gradient.png"}
           alt="fluid-wave"
+          sizes="100vw"
         />
       </div>
 

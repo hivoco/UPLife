@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import OverlayCard from "./OverlayCard";
 import { useState } from "react";
-import { log } from "console";
+import { X } from "lucide-react";
 
 const ImageExpander = () => {
   const cards = [
@@ -37,9 +36,7 @@ const ImageExpander = () => {
   const [selectedCardId, setSelectedCardId] = useState<number | null>(null);
 
   return (
-    <div className="hidden  container mx-auto px-6  md:px-16 relative w-full pt-[56px] pb-[112px] text-center">
-      {/* {!selectedCardId ? (
-        <> */}
+    <div className="hidden md:block container mx-auto px-6 md:px-16 relative w-full py-6 md:pt-[56px] md:pb-[112px] text-center">
       <Image
         src="/Group 13.png"
         alt="background F uplife logo"
@@ -48,48 +45,52 @@ const ImageExpander = () => {
         height={600}
       />
 
-      <h1 className="font-normal text-[42px]/16 ">
+      <h1 className="font-normal  text-[28px]/8  md:text-[42px]/16 ">
         What happens when you UP your Life?
       </h1>
-      <h2 className="font-light text-2xl mt-[10px]">
+      <h2 className="font-light text-sm md:text-2xl mt-[10px]">
         Smart choice for a lighter, better you
       </h2>
 
       <OverlayCard cards={cards} setSelectedCardId={setSelectedCardId} />
-      {/* </> */}
-      {/* //   ) : ( */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-md h-full p-16 text-left flex items-center justify-between text-white">
-        <div className="w-[45%]">
-          <h2 className="text-5xl">GUT PRO </h2>
-          <p className="text-lg font-light">
-            Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-            consectetur.
-          </p>
+
+      {selectedCardId && (
+        <div
+          onClick={() => setSelectedCardId(null)}
+          className="absolute inset-0 z-10 h-full p-16 text-left flex flex-col md:flex-row items-center justify-between text-white"
+        >
+          <div className="text-center md:text-left md:w-[45%]">
+            <h2 className="text-2xl md:text-5xl">GUT PRO </h2>
+            <p className="text-xs md:text-lg font-light">
+              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+              consectetur.
+            </p>
+          </div>
+
+          <Image
+            src={cards[selectedCardId].overlayImageSrc}
+            width={430}
+            height={320}
+            alt="uplife product"
+          />
+
+          <Image
+            src={cards[selectedCardId].imageSrc}
+            fill
+            className="object-cover absolute inset-0 z-[-2]"
+            alt="uplife product"
+          />
+
+          <span
+            // onClick={() => setSelectedCardId(null)}
+            className="absolute top-16 right-16 text-white  text-2xl/6 text-center"
+          >
+            <X size={24} color="#fff" />
+          </span>
+
+          <div className="absolute z-[-1] inset-0 bg-black/60 backdrop-blur-md"></div>
         </div>
-
-        {selectedCardId && (
-          <>
-            <Image
-              src={cards[selectedCardId].overlayImageSrc}
-              width={430}
-              height={320}
-              alt="uplife product"
-            />
-
-            <Image
-              src={cards[selectedCardId].imageSrc}
-              fill
-              className="object-cover absolute inset-0 z-[-1]"
-              alt="uplife product"
-            />
-          </>
-        )}
-
-        <span className="absolute top-16 right-16 text-white  text-2xl/6 text-center">
-          X
-        </span>
-      </div>
-      {/* //   )} */}
+      )}
     </div>
   );
 };
