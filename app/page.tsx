@@ -29,7 +29,7 @@ export default function Home() {
     
       <ImageExpander/>
 
-      <div className="py-16 container mx-auto px-6  md:px-16   flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
+      <div className="py-6 md:py-16 container mx-auto px-6  md:px-16   flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
         <section className="text-center md:text-left">
           <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12 ">
             From the house of World’s{" "}
@@ -45,7 +45,7 @@ export default function Home() {
         </section>
 
         <video
-          className="aspect-[9/16]  md:aspect-video object-cover md:object-contain w-full md:w-[45vw] rounded-3xl"
+          className="aspect-[9/16]  md:aspect-video object-cover md:object-contain w-full md:w-[45vw] rounded-xl md:rounded-3xl"
           src="/16-9.mp4"
           autoPlay={true}
           loop

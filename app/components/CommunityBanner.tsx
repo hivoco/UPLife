@@ -3,11 +3,10 @@ import Image from "next/image";
 const CommunityBanner = () => {
   return (
     <div
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(53, 53, 53, 0.5) 30.29%, rgba(255, 255, 255, 0) 100%)",
-      }}
-      className="relative w-full h-[350px] text-white flex items-end-safe pb-6 md:pb-0 md:items-center"
+      className="relative w-full h-[350px] text-white flex items-end-safe pb-6 md:pb-0 md:items-center
+        bg-[linear-gradient(180deg,rgba(252,252,252,0)_52.4%,rgba(0,0,0,0.7)_70.19%,rgba(0,0,0,0.7)_100%)]
+        md:bg-[linear-gradient(90deg,rgba(0,0,0,0.5)_0%,rgba(53,53,53,0.5)_30.29%,rgba(255,255,255,0)_100%)]
+      "
     >
       <div className="container mx-auto px-6  md:px-16 text-center md:text-start">
         <h2 className="text-2xl md:text-[44px]/16 capitalize font-normal">
