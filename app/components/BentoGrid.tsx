@@ -150,7 +150,7 @@ const BentoGrid = () => {
         {/* Row 1: Full width image */}
         <div className="w-full aspect-[4/3]">
           <div className="relative w-full h-full aspect-video">
-            <Image src="/bento-grid/m1.png" alt="Mobile 1" fill className="object-cover rounded-4xl" />
+            <Image src="/bento-grid/m1.png" alt="Mobile 1" fill className="object-cover rounded-3xl" />
           </div>
         </div>
 
@@ -158,12 +158,12 @@ const BentoGrid = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="aspect-square">
             <div className="relative w-full aspect-square">
-              <Image src="/bento-grid/mcard-4.png" alt="Mobile card 4" fill className="object-cover rounded-4xl" />
+              <Image src="/bento-grid/mcard-4.png" alt="Mobile card 4" fill className="object-cover rounded-3xl" />
             </div>
           </div>
           <div className="aspect-square">
             <div className="relative w-full aspect-square">
-              <Image src="/bento-grid/2.png" alt="Mobile 2" fill className="object-cover rounded-4xl" />
+              <Image src="/bento-grid/2.png" alt="Mobile 2" fill className="object-cover rounded-3xl" />
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ const BentoGrid = () => {
         {/* Row 3: Full width image */}
         <div className="w-full aspect-[4/3]">
           <div className="relative w-full h-full aspect-video">
-            <Image src="/bento-grid/m3.png" alt="Mobile 3" fill className="object-cover rounded-4xl" />
+            <Image src="/bento-grid/m3.png" alt="Mobile 3" fill className="object-cover rounded-3xl" />
           </div>
         </div>
 

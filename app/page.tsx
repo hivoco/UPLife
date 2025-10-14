@@ -10,6 +10,7 @@ import HeroSection from "./components/HeroSection";
 import ImageExpander from "./components/ImageExpander";
 
 export default function Home() {
+  const text = "Real Families. Real Results. Real Transformations.";
   return (
     <div className="w-full mx-auto">
       <HeroSection />
@@ -106,7 +107,7 @@ export default function Home() {
       </div>
 
       <div className="pt-11">
-        <div className="overflow-hidden whitespace-nowrap">
+        {/* <div className="overflow-hidden whitespace-nowrap">
           <h2
             aria-roledescription="marquee"
             className="font-normal text-5xl md:text-[84px]/31.5 text-black animate-marquee 
@@ -114,7 +115,30 @@ export default function Home() {
           >
             Real Families. Real Results. Real Transformations.
           </h2>
-        </div>
+        </div> */}
+
+        <div className="overflow-hidden whitespace-nowrap">
+      <div className="inline-block animate-marquee">
+        <h2
+          aria-roledescription="marquee"
+          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+        >
+          {text}
+        </h2>
+        <h2
+          aria-roledescription="marquee"
+          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+        >
+          {text}
+        </h2>
+        <h2
+          aria-roledescription="marquee"
+          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+        >
+          {text}
+        </h2>
+      </div>
+    </div>
 
         <BentoGrid />
       </div>
@@ -122,8 +146,8 @@ export default function Home() {
       <Faqs />
 
       <div className="bg-[#457E7F] relative mt-10 ">
-        <div className="absolute -top-[80px] w-full h-[80px] ">
-          <Image src="/wave.png" alt="My image" fill className="object-fill " />
+        <div className="absolute -top-[60px] md:-top-[79px] w-full h-[80px] pb-10 ">
+          <Image src="/wave.png" alt="My image" fill className=" object-contain md:object-fill " />
         </div>
         <FooterCard />
         <Footer />
