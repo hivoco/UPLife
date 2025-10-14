@@ -40,7 +40,7 @@ const Faqs = () => {
           All Your Uplife Questions - Answered
         </h2>
 
-        <div className="relative  w-full md:w-72 ">
+        <div className="relative  w-full md:w-72 mt-4 md:mt-0">
           <input
             type="text"
             placeholder="Search your keyword here"
@@ -71,13 +71,13 @@ const Faqs = () => {
 
             <div className="w-full space-y-2.5">
               <div className="w-full flex items-center justify-between">
-                <h2 className="text-ld md:text-2xl">{faq.question}</h2>
+                <h2 className="text-ld md:text-2xl ">{faq.question}</h2>
                 {selectedQuesId === faq.id ? (
                   <svg
-                  className="cursor-pointer"
+                  className="cursor-pointer md:size-11 size-20"
                     onClick={() => setSelectedQuesId(null)}
-                    width="34"
-                    height="34"
+                    // width="34"
+                    // height="34"
                     viewBox="0 0 34 34"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -97,11 +97,10 @@ const Faqs = () => {
                   </svg>
                 ) : (
                   <svg
-                                    className="cursor-pointer"
-
+                    className="cursor-pointer md:size-11 size-20 "
                     onClick={() => setSelectedQuesId(faq.id)}
-                    width="42"
-                    height="42"
+                    // width="42"
+                    // height="42"
                     viewBox="0 0 42 42"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

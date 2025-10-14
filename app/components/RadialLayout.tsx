@@ -123,24 +123,24 @@ export default function RadialLayout() {
       <div key={item.id} className="">
         {/* Original position item */}
         <div
-          className={`flex flex-col  items-center text-center cursor-pointer transition-opacity duration-700 ${
+          className={`flex flex-col  text-center cursor-pointer transition-opacity duration-700 ${
             isSelected || isReturning ? "opacity-50" : "opacity-100"
-          }`}
+          }
+          ${item.id <= 3 ? "items-start" : "items-end"}
+          `}
           onClick={(e) => handleItemClick(item, e)}
         >
-          <div className="rounded-full flex items-center justify-center">
-            <div className={` rounded-full `}>
-              <Image
-                className={`object-cover rounded-full `}
-                src={item.imgSrcLarge}
-                width={150}
-                height={150}
-                alt={"dish-" + item.id}
-              />
-              <div className="mt-2.5 text-center">
-                <h2 className="text-2xl font-normal">{item.heading}</h2>
-                <h3 className="text-sm font-normal">{item.subheading}</h3>
-              </div>
+          <div className={``}>
+            <Image
+              className={`object-cover rounded-full mx-auto`}
+              src={item.imgSrcLarge}
+              width={150}
+              height={150}
+              alt={"dish-" + item.id}
+            />
+            <div className="mt-2.5 text-center">
+              <h2 className="text-2xl font-normal">{item.heading}</h2>
+              <h3 className="text-sm font-normal">{item.subheading}</h3>
             </div>
           </div>
           <h3 className="text-white font-semibold text-lg">{item.title}</h3>
@@ -356,51 +356,49 @@ export default function RadialLayout() {
         background:
           "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
       }}
-      className="relative radial-container pt-16 pb-8 text-white whitespace-nowrap"
+      className="hidden relative container mx-auto px-6  md:px-16 radial-container pt-16 pb-8 text-white whitespace-nowrap"
     >
-      <div className=" px-6  md:px-16">
-        <div className=" grid grid-cols-3 gap-8 items-center">
-          {/* Left Column */}
-          <div className="space-y-7 ">
-            {leftItems.map((item) => renderItem(item))}
-          </div>
+      <div className=" grid grid-cols-3 gap-8 items-center">
+        {/* Left Column */}
+        <div className="space-y-7 ">
+          {leftItems.map((item) => renderItem(item))}
+        </div>
 
-          {/* Center Circle */}
-          <div
-            ref={centerRef}
-            className={`w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 ${
-              selectedItem || returningItem ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            <div className="min-w-[500px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
-              <div className="text-center px-8 whitespace-nowrap">
-                <h1 className=" text-5xl/15 mb-2 ">How Are You</h1>
-                <h1 className=" text-5xl/15">Feeling Today?</h1>
-              </div>
+        {/* Center Circle */}
+        <div
+          ref={centerRef}
+          className={`w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 ${
+            selectedItem || returningItem ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <div className="min-w-[500px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
+            <div className="text-center px-8 whitespace-nowrap">
+              <h1 className=" text-5xl/15 mb-2 ">How Are You</h1>
+              <h1 className=" text-5xl/15">Feeling Today?</h1>
             </div>
-
-            <div className=" text-center mb-4">
-              <h2 className="font-normal  text-[32px]/10">
-                Your Journey, Our Solution
-              </h2>
-              <p className="font-light text-base ">
-                UpLife recipes for every version of you. Choose recipes that
-              </p>
-
-              <p className="font-light text-base ">
-                match your day and fuel your ambitions.
-              </p>
-            </div>
-
-            <button className="bg-white rounded-md py-2.5 px-6 font-normal text-black ">
-              Explore All Recipes
-            </button>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-7">
-            {rightItems.map((item) => renderItem(item))}
+          <div className=" text-center mb-4">
+            <h2 className="font-normal  text-[32px]/10">
+              Your Journey, Our Solution
+            </h2>
+            <p className="font-light text-base ">
+              UpLife recipes for every version of you. Choose recipes that
+            </p>
+
+            <p className="font-light text-base ">
+              match your day and fuel your ambitions.
+            </p>
           </div>
+
+          <button className="bg-white rounded-md py-2.5 px-6 font-normal text-black ">
+            Explore All Recipes
+          </button>
+        </div>
+
+        {/* Right Column */}
+        <div className="space-y-7">
+          {rightItems.map((item) => renderItem(item))}
         </div>
       </div>
     </div>

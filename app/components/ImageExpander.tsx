@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import OverlayCard from "./OverlayCard";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 const ImageExpander = () => {
@@ -34,13 +34,39 @@ const ImageExpander = () => {
   ];
 
   const [selectedCardId, setSelectedCardId] = useState<number | null>(null);
+  const divRef = useRef<HTMLDivElement>(null);
+  const handleClick = () => {
+    setTimeout(() => {
+      divRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+    // make the dic adjust to height first because of any change first then only scroll view it
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedCardId(null);
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   return (
-    <div className="hidden md:block container mx-auto px-6 md:px-16 relative w-full py-6 md:pt-[56px] md:pb-[112px] text-center">
+    <div
+      ref={divRef}
+      onClick={handleClick}
+      className={`container mx-auto px-6 md:px-16 relative w-full py-6 md:pt-[56px] md:pb-[112px] text-center  
+        ${
+          selectedCardId
+            ? "md:overflow-visible max-h-[90svh]  md:max-h-none rounded-4xl md:rounded-none"
+            : ""
+        }
+        `}
+    >
       <Image
         src="/Group 13.png"
         alt="background F uplife logo"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25 pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-full h-auto object-cover  opacity-25 pointer-events-none "
         width={600}
         height={600}
       />
@@ -52,12 +78,16 @@ const ImageExpander = () => {
         Smart choice for a lighter, better you
       </h2>
 
-      <OverlayCard cards={cards} setSelectedCardId={setSelectedCardId} />
+      <OverlayCard
+        cards={cards}
+        selectedCardId={selectedCardId}
+        setSelectedCardId={setSelectedCardId}
+      />
 
       {selectedCardId && (
         <div
           onClick={() => setSelectedCardId(null)}
-          className="absolute inset-0 z-10 h-full p-16 text-left flex flex-col md:flex-row items-center justify-between text-white"
+          className="absolute  inset-0 w-9/10 md:w-full z-10 mx-auto px-6 h-full  md:p-16 text-left flex flex-col md:flex-row items-center gap-16 justify-center md:justify-between text-white"
         >
           <div className="text-center md:text-left md:w-[45%]">
             <h2 className="text-2xl md:text-5xl">GUT PRO </h2>
@@ -68,27 +98,27 @@ const ImageExpander = () => {
           </div>
 
           <Image
-            src={cards[selectedCardId].overlayImageSrc}
+            src={cards[selectedCardId - 1].overlayImageSrc}
             width={430}
             height={320}
             alt="uplife product"
           />
 
-          <Image
-            src={cards[selectedCardId].imageSrc}
-            fill
-            className="object-cover absolute inset-0 z-[-2]"
-            alt="uplife product"
-          />
-
           <span
             // onClick={() => setSelectedCardId(null)}
-            className="absolute top-16 right-16 text-white  text-2xl/6 text-center"
+            className="absolute top-6 right-6 md:top-16 md:right-16 text-white  text-2xl/6 text-center"
           >
             <X size={24} color="#fff" />
           </span>
 
-          <div className="absolute z-[-1] inset-0 bg-black/60 backdrop-blur-md"></div>
+          <Image
+            src={cards[selectedCardId - 1].imageSrc}
+            fill
+            className="object-cover absolute inset-0 z-[-2] pointer-events-none rounded-4xl md:rounded-none"
+            alt="uplife product"
+          />
+
+          <div className="absolute z-[-1] inset-0 bg-black/60 backdrop-blur-md pointer-events-none rounded-4xl md:rounded-none"></div>
         </div>
       )}
     </div>

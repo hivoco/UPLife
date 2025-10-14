@@ -9,10 +9,11 @@ interface Card {
 
 interface OverlayCardProps {
   cards: Card[];
+  selectedCardId:number|null;
   setSelectedCardId: (id: number | null) => void;
 }
 
-const OverlayCard = ({ cards, setSelectedCardId }: OverlayCardProps) => {
+const OverlayCard = ({ cards,selectedCardId, setSelectedCardId }: OverlayCardProps) => {
   return (
     <div className="w-full flex flex-col md:flex-row  justify-center gap-3.5 md:gap-6 items-center pt-7 md:pt-[50px]">
       {cards.map((card) => (
@@ -23,7 +24,7 @@ const OverlayCard = ({ cards, setSelectedCardId }: OverlayCardProps) => {
             background:
               "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 78.85%, rgba(0, 0, 0, 0.5) 100%)",
           }}
-          className="relative  rounded-4xl outline-2 outline-[#20695F] h-[40vh]  text-white text-left"
+          className={`relative  rounded-4xl outline-2 outline-[#20695F] h-[40vh]  text-white text-left ${selectedCardId?"invisible":""}`}
         >
           <Image
             className="rounded-4xl object-cover h-full w-full"

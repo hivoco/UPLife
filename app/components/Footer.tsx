@@ -56,7 +56,7 @@ function Footer() {
             </div>
           </div>
           <div>
-            <div className="grid grid-cols-3  gap-7">
+            <div className="grid grid-cols-2 md:grid-cols-3    gap-7">
               {text.map((e) => (
                 <small key={e} className="text-lg md:text-xl font-light cursor-pointer">
                   {e}
