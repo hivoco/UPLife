@@ -9,8 +9,6 @@ type Item = {
   imgSrcLarge: string;
   heading: string;
   subheading: string;
-  title?: string;
-  subtitle?: string;
 };
 
 type AnimationStart = {
@@ -120,37 +118,39 @@ export default function RadialLayout() {
     const isReturning = returningItem?.id === item.id;
 
     return (
-      <div key={item.id} className="">
+      <div key={item.id} className="shrink-0">
         {/* Original position item */}
         <div
-          className={`flex flex-col  text-center cursor-pointer transition-opacity duration-700 ${
-            isSelected || isReturning ? "opacity-50" : "opacity-100"
-          }
-          ${item.id <= 3 ? "items-start" : "items-end"}
+          className={`flex flex-row md:flex-col text-center cursor-pointer transition-opacity duration-700 
+            ${isSelected || isReturning ? "opacity-50" : "opacity-100"}
           `}
           onClick={(e) => handleItemClick(item, e)}
         >
           <div className={``}>
             <Image
-              className={`object-cover rounded-full mx-auto`}
+              className={`object-cover rounded-full  mx-auto ${
+                isSelected ? "border-2 border-white border-dashed" : ""
+              }`}
               src={item.imgSrcLarge}
               width={150}
               height={150}
               alt={"dish-" + item.id}
             />
             <div className="mt-2.5 text-center">
-              <h2 className="text-2xl font-normal">{item.heading}</h2>
-              <h3 className="text-sm font-normal">{item.subheading}</h3>
+              <h2 className="text-base/6 md:text-2xl font-normal">
+                {item.heading}
+              </h2>
+              <h3 className="text-xs/4.5 md:text-sm font-normal">
+                {item.subheading}
+              </h3>
             </div>
           </div>
-          <h3 className="text-white font-semibold text-lg">{item.title}</h3>
-          <p className="text-teal-100 text-sm">{item.subtitle}</p>
         </div>
 
         {/* Animated clone moving to center */}
         {isSelected && animationStart && !isReturning && (
           <div
-            className="absolute z-50 w-full pointer-events-none flex flex-col items-center"
+            className="hidden md:flex absolute z-50 w-full pointer-events-none  flex-col items-center"
             style={{
               left: `${animationStart.x}px`,
               top: `${animationStart.y}px`,
@@ -235,9 +235,9 @@ export default function RadialLayout() {
                 }}
               >
                 <h3 className="text-white font-bold text-3xl mb-2">
-                  {item.title}
+                  {item.heading}
                 </h3>
-                <p className="text-teal-100 text-lg mb-4">{item.subtitle}</p>
+                <p className="text-teal-100 text-lg mb-4">{item.subheading}</p>
                 <button
                   onClick={handleCloseSelected}
                   className="bg-white text-teal-700 px-6 py-2 rounded-lg font-semibold hover:bg-teal-50 transition-colors"
@@ -250,7 +250,7 @@ export default function RadialLayout() {
         )}
 
         {/* Animated clone returning to original position */}
-        {isReturning && animationStart && (
+        {/* {isReturning && animationStart && (
           <div
             className="absolute z-50 pointer-events-none flex flex-col items-center"
             style={{
@@ -346,7 +346,7 @@ export default function RadialLayout() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     );
   };
@@ -356,48 +356,73 @@ export default function RadialLayout() {
         background:
           "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
       }}
-      className="hidden relative container mx-auto px-6  md:px-16 radial-container pt-16 pb-8 text-white whitespace-nowrap"
+      className="relative container mx-auto px-6 md:px-16 radial-container pt-16 pb-8 text-white whitespace-nowrap overflow-hidden"
     >
-      <div className=" grid grid-cols-3 gap-8 items-center">
+      <div className=" grid auto-rows-[200px] md:auto-rows-auto md:grid-cols-5 gap-0 md:gap-20 md:items-center">
         {/* Left Column */}
-        <div className="space-y-7 ">
+        <div className="flex flex-row md:flex-col items-center  gap-7 row-span-1  md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
           {leftItems.map((item) => renderItem(item))}
+          <div className="md:hidden flex flex-row gap-7">
+            {rightItems.map((item) => renderItem(item))}
+          </div>
         </div>
 
         {/* Center Circle */}
         <div
           ref={centerRef}
-          className={`w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 ${
-            selectedItem || returningItem ? "opacity-0" : "opacity-100"
-          }`}
+          className={`overflow-hidden md:max-w-none row-span-3 md:row-span-1  md:col-span-3 w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 
+            ${selectedItem || returningItem ? " md:opacity-0" : "opacity-100"}
+          `}
         >
-          <div className="min-w-[500px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
-            <div className="text-center px-8 whitespace-nowrap">
-              <h1 className=" text-5xl/15 mb-2 ">How Are You</h1>
-              <h1 className=" text-5xl/15">Feeling Today?</h1>
+          <div className=" md:w-full md:max-w-[550px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
+            {selectedItem && (
+              <Image
+                width={327}
+                height={327}
+                src={selectedItem.imgSrcLarge}
+                className="md:hidden w-full h-full object-cover"
+                alt="dish image"
+              />
+            )}
+
+            <div
+              className={`text-center px-8 whitespace-nowrap ${
+                selectedItem ? "hidden md:block" : ""
+              }`}
+            >
+              <h1 className="text-[28px]/9 md:text-5xl/15 mb-2 ">
+                How Are You
+              </h1>
+              <h1 className="text-[28px]/9 md:text-5xl/15">Feeling Today?</h1>
             </div>
           </div>
 
           <div className=" text-center mb-4">
-            <h2 className="font-normal  text-[32px]/10">
-              Your Journey, Our Solution
+            <h2 className="font-normal text-[24px]/9 md:text-[32px]/10">
+              {selectedItem
+                ? selectedItem.heading
+                : "Your Journey, Our Solution "}
             </h2>
-            <p className="font-light text-base ">
-              UpLife recipes for every version of you. Choose recipes that
+            <p className="font-light text-sm md:text-base ">
+              {selectedItem
+                ? selectedItem.subheading
+                : "UpLife recipes for every version of you. Choose recipes that"}
             </p>
-
-            <p className="font-light text-base ">
-              match your day and fuel your ambitions.
-            </p>
+            {!selectedItem && (
+              <p className="font-light text-sm md:text-base ">
+                match your day and fuel your ambitions.
+              </p>
+            )}
           </div>
 
-          <button className="bg-white rounded-md py-2.5 px-6 font-normal text-black ">
+            {!selectedItem && (
+          <button className="bg-white text-lg rounded-md py-2.5 px-6 font-normal text-black ">
             Explore All Recipes
-          </button>
+          </button>)}
         </div>
 
         {/* Right Column */}
-        <div className="space-y-7">
+        <div className="hidden md:flex flex-row  md:flex-col gap-7 row-span-1 md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
           {rightItems.map((item) => renderItem(item))}
         </div>
       </div>
