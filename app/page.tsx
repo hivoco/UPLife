@@ -93,7 +93,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative">
+      <div className="relative ">
         <RadialLayout />
 
         <Image
@@ -101,7 +101,7 @@ export default function Home() {
           alt="top svg curved"
           width={1280}
           height={100}
-          className="w-full h-auto"
+          className="w-full h-auto "
         />
       </div>
 

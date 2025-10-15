@@ -301,8 +301,8 @@ function FooterCard() {
       {/* Desktop Grid - visible at md breakpoint and above */}
       <div className="hidden md:block ">
         {/* Row 1 */}
-        <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-4 mt-12">
-          <div className="relative w-full ">
+        <div className="grid grid-cols-[2fr_1fr_1fr] gap-4 mt-12">
+          <div className="relative w-full  ">
             <Image src="/t2.png" alt="Wellness image" fill className="object-cover rounded-4xl" />
           </div>
           <div className="relative w-full aspect-square">
@@ -314,7 +314,7 @@ function FooterCard() {
         </div>
 
         {/* Row 2 */}
-        <div className="grid grid-cols-[1fr_1fr_1.5fr] gap-4 mt-4">
+        <div className="grid grid-cols-[1fr_1fr_2fr] gap-4 mt-4">
           <div className="relative w-full aspect-square">
             <Image src="/r3.png" alt="Wellness image" fill className="object-cover rounded-4xl" />
           </div>
