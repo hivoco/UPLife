@@ -53,7 +53,7 @@ export default function Home() {
         />
       </div>
 
-      <div className=" md:block relative pb-[3.5vh] w-full ">
+      <div className="relative pb-[3.5vh] w-full ">
         <div className="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between gap-7 md:gap-[6.7vw]">
           <Image
             className=" md:ml-[100px] h-[37svh] md:h-svh  md:max-h-[550px] w-auto object-contain order-2 md:order-0"
@@ -75,25 +75,25 @@ export default function Home() {
         </div>
 
         <Image
-          className="absolute md:hidden z-[-1] w-full mx-auto md:m-0 h-[27svh] md:h-[55%] inset-0 top-auto object-center  md:object-center"
+          className="absolute md:hidden -z-1 h-[25svh] w-full left-0 right-0 bottom-0 "
           width={1280}
-          height={300}
+          height={250}
           src={"/curved-brown-green-mobile.png"}
           alt="fluid-wave"
-          sizes="100vw"
         />
 
         {/* desktop image */}
         <Image
-          className="hidden md:inline absolute z-[-1] w-full mx-auto h-[55%] inset-0 top-auto object-cover"
+          className="hidden md:inline absolute -z-1 w-full left-0 right-0 bottom-0 "
           width={1280}
           height={300}
           src={"/fluid-wave-green-top-gradient.png"}
-          alt="fluid-wave"
+          alt="fluid wave decoration"
+          sizes="100vw"
         />
       </div>
 
-      <div className="relative ">
+      <div className="relative z-1 -mt-1 md:m-0">
         <RadialLayout />
 
         <Image
@@ -101,7 +101,7 @@ export default function Home() {
           alt="top svg curved"
           width={1280}
           height={100}
-          className="w-full h-auto "
+          className="w-full h-auto"
         />
       </div>
 

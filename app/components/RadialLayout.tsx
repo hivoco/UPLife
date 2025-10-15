@@ -216,6 +216,7 @@ export default function RadialLayout() {
                 onClick={handleCloseSelected}
               >
                 <div className="absolute inset-0 border-2 border-dashed rounded-full [animation:fadeIn_700ms_ease-in-out_forwards]"></div>
+
                 <Image
                   style={{
                     animation: `growInner-${item.id} 700ms ease-in-out forwards`,
@@ -352,15 +353,14 @@ export default function RadialLayout() {
   };
   return (
     <div
-      style={{
-        background:
-          "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
-      }}
-      className="relative  radial-container pt-11 md:pt-16 pb-8 text-white whitespace-nowrap overflow-hidden"
+      className="relative  radial-container pt-11 md:pt-16 pb-8 text-white whitespace-nowrap overflow-hidden
+      bg-[linear-gradient(180deg,#D9EBE2_-44.15%,#457E7F_4.22%,#457E7F_34.46%,#457E7F_52.45%,#457E7F_74.54%,#588F87_98.35%,#D9EBE2_140.62%)] 
+      md:bg-[linear-gradient(180deg,#D9EBE2_-44.15%,#457E7F_19.19%,#457E7F_34.46%,#457E7F_52.45%,#457E7F_74.54%,#588F87_88.18%,#D9EBE2_140.62%)]
+      "
     >
-      <div className=" grid container mx-auto px-6 md:px-16 auto-rows-[180px] md:auto-rows-auto md:grid-cols-5 gap-5 md:gap-20 md:items-center">
+      <div className=" grid container mx-auto px-6 md:px-16 auto-rows[180px] md:auto-rows-auto md:grid-cols-5 gap-6 md:gap-20 md:items-center">
         {/* Left Column */}
-        <div className="flex flex-row md:flex-col items-center gap-8 md:gap-7 row-span-1  md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
+        <div className="flex flex-row md:flex-col items-center gap-9 md:gap-7 row-span-1  md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible scrollbar-hide">
           {leftItems.map((item) => renderItem(item))}
           <div className="md:hidden flex flex-row gap-7">
             {rightItems.map((item) => renderItem(item))}
@@ -376,7 +376,7 @@ export default function RadialLayout() {
             }
           `}
         >
-          <div className=" md:w-full md:max-w-[550px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
+          <div className="w-full md:w-full md:max-w-[550px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
             {selectedItem && (
               <Image
                 width={327}
