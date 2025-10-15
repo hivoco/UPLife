@@ -126,9 +126,9 @@ export default function RadialLayout() {
           `}
           onClick={(e) => handleItemClick(item, e)}
         >
-          <div className={``}>
+          <div className="space-y-1.5 md:space-y-2.5">
             <Image
-              className={`object-cover rounded-full  mx-auto ${
+              className={`object-cover max-w-[130px] md:max-w-[150px]  rounded-full  mx-auto ${
                 isSelected ? "border-2 border-white border-dashed" : ""
               }`}
               src={item.imgSrcLarge}
@@ -136,7 +136,7 @@ export default function RadialLayout() {
               height={150}
               alt={"dish-" + item.id}
             />
-            <div className="mt-2.5 text-center">
+            <div className=" text-center">
               <h2 className="text-base/6 md:text-2xl font-normal">
                 {item.heading}
               </h2>
@@ -356,11 +356,11 @@ export default function RadialLayout() {
         background:
           "linear-gradient(180deg, #D9EBE2 -44.15%, #457E7F 19.19%, #457E7F 34.46%, #457E7F 52.45%, #457E7F 74.54%, #588F87 88.18%, #D9EBE2 140.62%)",
       }}
-      className="relative container mx-auto px-6 md:px-16 radial-container pt-16 pb-8 text-white whitespace-nowrap overflow-hidden"
+      className="relative container mx-auto px-6 md:px-16 radial-container pt-11 md:pt-16 pb-8 text-white whitespace-nowrap overflow-hidden"
     >
-      <div className=" grid auto-rows-[200px] md:auto-rows-auto md:grid-cols-5 gap-0 md:gap-20 md:items-center">
+      <div className=" grid auto-rows-[180px] md:auto-rows-auto md:grid-cols-5 gap-5 md:gap-20 md:items-center">
         {/* Left Column */}
-        <div className="flex flex-row md:flex-col items-center  gap-7 row-span-1  md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
+        <div className="flex flex-row md:flex-col items-center gap-8 md:gap-7 row-span-1  md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
           {leftItems.map((item) => renderItem(item))}
           <div className="md:hidden flex flex-row gap-7">
             {rightItems.map((item) => renderItem(item))}
@@ -370,8 +370,8 @@ export default function RadialLayout() {
         {/* Center Circle */}
         <div
           ref={centerRef}
-          className={`overflow-hidden md:max-w-none row-span-3 md:row-span-1  md:col-span-3 w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 
-            ${selectedItem || returningItem ? " md:opacity-0" : "opacity-100"}
+          className={`overflow-hidden md:max-w-none row-span-2 md:row-span-1  md:col-span-3 w-full flex text-white flex-col items-center justify-center transition-opacity duration-500 
+            ${selectedItem || returningItem ? " md:opacity-0" : "md:opacity-100"}
           `}
         >
           <div className=" md:w-full md:max-w-[550px] aspect-square rounded-full border-2 border-dashed border-white/60 flex items-center justify-center mb-8">
@@ -415,14 +415,15 @@ export default function RadialLayout() {
             )}
           </div>
 
-            {!selectedItem && (
-          <button className="bg-white text-lg rounded-md py-2.5 px-6 font-normal text-black ">
-            Explore All Recipes
-          </button>)}
+          {!selectedItem && (
+            <button className="bg-white text-lg rounded-md py-2.5 px-6 font-normal text-black ">
+              Explore All Recipes
+            </button>
+          )}
         </div>
 
         {/* Right Column */}
-        <div className="hidden md:flex flex-row  md:flex-col gap-7 row-span-1 md:col-span-1 overflow-x-auto overflow-y-hidden md:overflow-visible">
+        <div className="hidden md:flex md:flex-col md:gap-7  md:col-span-1">
           {rightItems.map((item) => renderItem(item))}
         </div>
       </div>

@@ -53,7 +53,7 @@ export default function Home() {
         />
       </div>
 
-      <div className=" md:block relative pb-[3.5vh] w-full">
+      <div className=" md:block relative pb-[3.5vh] w-full ">
         <div className="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between gap-7 md:gap-[6.7vw]">
           <Image
             className=" md:ml-[100px] h-[37svh] md:h-svh  md:max-h-[550px] w-auto object-contain order-2 md:order-0"
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
 
         <Image
-          className="absolute z-[-1] w-full mx-auto md:m-0 h-[27svh] md:h-[55%] inset-0 top-auto object-center  md:object-center"
+          className="absolute md:hidden z-[-1] w-full mx-auto md:m-0 h-[27svh] md:h-[55%] inset-0 top-auto object-center  md:object-center"
           width={1280}
           height={300}
           src={"/curved-brown-green-mobile.png"}
@@ -85,12 +85,11 @@ export default function Home() {
 
         {/* desktop image */}
         <Image
-          className="hidden md:block absolute z-[-1] w-full mx-auto h-[55%] inset-0 top-auto object-cover"
+          className="hidden md:inline absolute z-[-1] w-full mx-auto h-[55%] inset-0 top-auto object-cover"
           width={1280}
           height={300}
           src={"/fluid-wave-green-top-gradient.png"}
           alt="fluid-wave"
-          sizes="100vw"
         />
       </div>
 
@@ -118,27 +117,27 @@ export default function Home() {
         </div> */}
 
         <div className="overflow-hidden whitespace-nowrap">
-      <div className="inline-block animate-marquee">
-        <h2
-          aria-roledescription="marquee"
-          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
-        >
-          {text}
-        </h2>
-        <h2
-          aria-roledescription="marquee"
-          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
-        >
-          {text}
-        </h2>
-        <h2
-          aria-roledescription="marquee"
-          className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
-        >
-          {text}
-        </h2>
-      </div>
-    </div>
+          <div className="inline-block animate-marquee">
+            <h2
+              aria-roledescription="marquee"
+              className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+            >
+              {text}
+            </h2>
+            <h2
+              aria-roledescription="marquee"
+              className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+            >
+              {text}
+            </h2>
+            <h2
+              aria-roledescription="marquee"
+              className="font-normal text-5xl md:text-[84px] md:leading-[84px] text-black inline-block px-4"
+            >
+              {text}
+            </h2>
+          </div>
+        </div>
 
         <BentoGrid />
       </div>
@@ -147,7 +146,12 @@ export default function Home() {
 
       <div className="bg-[#457E7F] relative mt-10 ">
         <div className="absolute -top-[60px] md:-top-[79px] w-full h-[80px] pb-10 ">
-          <Image src="/wave.png" alt="My image" fill className=" object-contain md:object-fill " />
+          <Image
+            src="/wave.png"
+            alt="My image"
+            fill
+            className=" object-contain md:object-fill "
+          />
         </div>
         <FooterCard />
         <Footer />

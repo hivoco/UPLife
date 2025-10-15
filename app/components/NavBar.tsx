@@ -272,7 +272,7 @@ const Navbar = ({ animation }: { animation: boolean }) => {
     <>
       {/* Desktop Navbar */}
       <nav
-        className={`hidden md:flex justify-between gap-6 bg-transparent items-start
+        className={`hidden md:flex justify-between  md:gap-6 bg-transparent items-start
         transition-transform duration-1000 ease-out
         ${animation ? "" : "-translate-y-[100%] opacity-0"}
       `}

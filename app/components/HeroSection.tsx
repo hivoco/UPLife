@@ -19,10 +19,10 @@ const HeroSection = () => {
       <header className=" mx-auto px-6  md:px-16 container pt-5 md:pt-10  flex justify-between gap-12 ">
         <Image
           src="/logo.png"
-          width={90}
+          width={86}
           height={100}
           alt="logo uplife"
-          className="object-cover cursor-pointer"
+          className="h-20 md:h-25 w-auto object-cover cursor-pointer"
           priority={true}
         />
         <Navbar animation={animation} />

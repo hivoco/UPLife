@@ -64,11 +64,11 @@ const Cards = () => {
         {cards.map((card) => (
           <div
             key={card.id}
-            // onMouseEnter={() => setHoveredCard(card.id)}
-            // onMouseLeave={() => setHoveredCard(1)}
+            onMouseEnter={() => setHoveredCard(card.id)}
+            onMouseLeave={() => setHoveredCard(1)}
 
             onTouchStart={() => setHoveredCard(card.id)}
-            // onTouchEnd={() => setHoveredCard(1)}
+            onTouchEnd={() => setHoveredCard(1)}
             // style={{
             //   width:
             //     hoveredCard === card.id
