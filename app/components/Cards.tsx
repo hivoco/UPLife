@@ -60,21 +60,15 @@ const Cards = () => {
 
   return (
     <div className="pt-6 md:pt-9">
-      <div className="flex w-full h-full justify-between gap-2.5  md:whitespace-nowrap overflow-x-auto overflow-y-hidden md:overflow-visible">
+      <div className="flex w-full h-full justify-between gap-2.5  overflow-x-auto overflow-y-hidden md:overflow-visible">
         {cards.map((card) => (
           <div
             key={card.id}
             onMouseEnter={() => setHoveredCard(card.id)}
             onMouseLeave={() => setHoveredCard(1)}
-
-            onTouchStart={() => setHoveredCard(card.id)}
-            onTouchEnd={() => setHoveredCard(1)}
-            // style={{
-            //   width:
-            //     hoveredCard === card.id
-            //       ? "calc(37.5% - 0.5rem)"
-            //       : "calc(12.5% - 0.5rem)",
-            // }}
+            onClick={() => setHoveredCard(card.id)}
+            // onTouchStart={() => setHoveredCard(card.id)}
+            onTouchEnd={() => setHoveredCard(card.id)}
             className={`shrink-0
               group relative overflow-hidden rounded-2xl !h-[34svh]  md:!h-[70vh]  md:min-h-[500px]
               transition-all  duration-700 ease-in-out 
@@ -126,7 +120,7 @@ const Cards = () => {
               </h3>
 
               <h4
-                className={`text-[8px]/3  md:text-sm font-light 
+                className={`text-[8px]/3  md:text-sm font-light
                     transform transition-all ease-in-out
                    ${
                      hoveredCard === card.id

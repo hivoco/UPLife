@@ -146,7 +146,7 @@ const BentoGrid = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden flex flex-col gap-4">
+      <div className="md:hidden flex flex-col gap-2 md:gap-4">
         {/* Row 1: Full width image */}
         <div className="w-full aspect-[4/3]">
           <div className="relative w-full h-full aspect-video">

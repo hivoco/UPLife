@@ -162,9 +162,13 @@ export default function RadialLayout() {
             <style>{`
               @keyframes moveToCenter-${item.id} {
                 0% {
+                opacity:0;
                   left: ${animationStart.x}px;
                   top: ${animationStart.y}px;
                 }
+                  10%{
+                    opacity:0;
+                  }
                 100% {
                   left: ${animationStart.centerX}px;
                   // top: ${animationStart.centerY}px;
@@ -174,8 +178,8 @@ export default function RadialLayout() {
               
               @keyframes growCircle-${item.id} {
                 0% {
-                  width: 128px;
-                  height: 128px;
+                  width: 100px;
+                  height: 100px;
                 }
                 100% {
                   width: 320px;
@@ -211,7 +215,7 @@ export default function RadialLayout() {
 
             <div className="pointer-events-auto">
               <div
-                className="relative rounded-full flex items-center justify-center cursor-pointer  border-white/60
+                className="relative rounded-full flex items-center justify-center cursor-pointer border-white/60
                 "
                 onClick={handleCloseSelected}
               >

@@ -53,23 +53,24 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative pb-[3.5vh] w-full ">
-        <div className="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between gap-7 md:gap-[6.7vw]">
+      <div className="relative  pb-[3.5vh] w-full ">
+        <div className="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between gap-7 md:gap-20">
           <Image
-            className=" md:ml-[100px] h-[37svh] md:h-svh  md:max-h-[550px] w-auto object-contain order-2 md:order-0"
+            className=" md:ml-[100px] h-[37svh] md:h-svh md:max-h-[550px] w-auto object-contain order-2 md:order-0"
             width={240}
             height={550}
             src={"/uplife-orange-oil.png"}
             alt="uplife-orange-oil"
           />
-          <div className="w-full md:w-1/2  space-y-2 md:space-y-4 pt-6 md:pt-16 order-1 md:order-0">
-            <h1 className="font-normal text-2xl md:text-5xl ">
+          <div className="w-full md:max-w-2xl space-y-2 md:space-y-4 pt-6 md:pt-16 order-1 md:order-0">
+            <h1 className="font-normal text-2xl md:text-[44px]/11 ">
               Your health, your product{" "}
             </h1>
-            <p className="font-light text-center md:text-left text-sm md:text-lg">
+            <p className="font-light text-center md:text-left text-sm md:text-base">
               Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
               consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
-              dolor sit amet consectetur.{" "}
+              dolor sit amet consectetur.
+               Lorem ipsum dolor sit amet consectetur. Lorem ipsum
             </p>
           </div>
         </div>
@@ -103,19 +104,11 @@ export default function Home() {
           height={100}
           className="w-full h-auto"
         />
+
+        auto-rows[180px]
       </div>
 
       <div className="pt-11">
-        {/* <div className="overflow-hidden whitespace-nowrap">
-          <h2
-            aria-roledescription="marquee"
-            className="font-normal text-5xl md:text-[84px]/31.5 text-black animate-marquee 
-          "
-          >
-            Real Families. Real Results. Real Transformations.
-          </h2>
-        </div> */}
-
         <div className="overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-marquee">
             <h2
@@ -144,7 +137,7 @@ export default function Home() {
       <CommunityBanner />
       <Faqs />
 
-      <div className="bg-[#457E7F] relative mt-10 ">
+      <div className="bg-[#457E7F] relative mt-10 md:py-8 py-4">
         <div className="absolute -top-[60px] md:-top-[79px] w-full h-[80px] pb-10 ">
           <Image
             src="/wave.png"

@@ -272,7 +272,7 @@ const Navbar = ({ animation }: { animation: boolean }) => {
     <>
       {/* Desktop Navbar */}
       <nav
-        className={`hidden md:flex justify-between  lg:gap-6 bg-transparent items-start
+        className={`hidden md:flex justify-between md:gap-3 lg:gap-6 bg-transparent items-start
         transition-transform duration-1000 ease-out
         ${animation ? "" : "-translate-y-[100%] opacity-0"}
       `}
@@ -283,9 +283,9 @@ const Navbar = ({ animation }: { animation: boolean }) => {
             className="
             whitespace-nowrap
             text-center
-              px-4 py-2
+              px-3 py-1.5
               rounded-full
-              text-base/5
+              text-sm/4.5
               font-normal
               outline outline-white
               bg-black/50
