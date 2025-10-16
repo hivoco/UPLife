@@ -25,14 +25,19 @@ const OverlayCard = ({
   divRef,
 }: // onCardClick,
 OverlayCardProps) => {
-  const [clickedCardStyles, setClickedCardStyles] = useState<any>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [positionObj, setPositionObj] = useState({
-    top: "",
-    left: "",
-    width: "",
-    height: "",
+  const [clickedCardStyles, setClickedCardStyles] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,    
   });
+  const [isAnimating, setIsAnimating] = useState(false);
+  // const [positionObj, setPositionObj] = useState({
+  //   top: "",
+  //   left: "",
+  //   width: "",
+  //   height: "",
+  // });
 
   const handleCardClick = (cardId: number, event: React.MouseEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();

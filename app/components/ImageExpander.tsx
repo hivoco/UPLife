@@ -2,7 +2,6 @@
 import Image from "next/image";
 import OverlayCard from "./OverlayCard";
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
 
 const ImageExpander = () => {
   const cards = [
