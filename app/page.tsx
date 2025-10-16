@@ -105,7 +105,6 @@ export default function Home() {
           className="w-full h-auto"
         />
 
-        auto-rows[180px]
       </div>
 
       <div className="pt-11">
