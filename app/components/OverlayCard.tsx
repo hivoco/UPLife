@@ -46,6 +46,11 @@ const OverlayCard = ({
   }, []);
 
   const handleCardClick = (cardId: number, event: React.MouseEvent) => {
+    if (selectedCardId) {
+      setSelectedCardId(null);
+      return;
+    }
+    
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
     const parentRect = divRef.current?.getBoundingClientRect();
     if (parentRect) {
@@ -155,7 +160,7 @@ const OverlayCard = ({
           <Image
             className={`transition-all ease-in-out  ${
               selectedCardId === card.id
-                ? "opacity-100 scale-100 delay-100 duration-700"
+                ? "opacity-100 scale-100 delay-100 duration-700 pointer-events-auto"
                 : "opacity-0 scale-95 pointer-events-none "
             }`}
             src={card.overlayImageSrc}
