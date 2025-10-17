@@ -18,7 +18,7 @@ const Cards = () => {
       id: 2,
       title: "Improved digestion, better sleep",
       description:
-        "Light food fuels body, keeps you active and energized all day.",
+        "Healthy digestion calms body, supporting deeper rest and peaceful sleep.Retrys",
       image: "/cards/2.png",
       size: "small",
     },
@@ -26,7 +26,7 @@ const Cards = () => {
       id: 3,
       title: "Mindful eating, stress-free life",
       description:
-        "Light food fuels body, keeps you active and energized all day.",
+        "Eating slowly with awareness brings calm, balance, and lasting happiness.Retry",
       image: "/cards/3.png",
       size: "small",
     },
@@ -43,16 +43,15 @@ const Cards = () => {
       id: 5,
       title: "Daily balance, long-term wellness",
       description:
-        "Light food fuels body, keeps you active and energized all day.",
-
+        "Small everyday habits build stronger health and wellness for today & tomorrow.",
       image: "/cards/5.png",
       size: "small",
     },
     {
       id: 6,
-      title: "Nourishing wellness in habits",
+      title: "Lifelong wellness habits",
       description:
-        "Light food fuels body, keeps you active and energized all day.",
+        "Consistent care builds resilience, nurturing health that lasts a lifetime.",
       image: "/cards/6.jpeg",
       size: "small",
     },

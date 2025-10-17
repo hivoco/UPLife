@@ -11,7 +11,7 @@ const ImageExpander = () => {
       imageSrc: "/overlay-card/1.png",
       overlayImageSrc: "/uplife-products/gut-pro.png",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.",
+        "Happy gut, Healthier you – that reflects in your everyday energy and mood.",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const ImageExpander = () => {
       overlayImageSrc: "/uplife-products/oil-weight-watchers.png",
 
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.",
+        "Your ally in mindful eating — savor every meal while staying on your health journey.",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const ImageExpander = () => {
       imageSrc: "/overlay-card/3.jpg",
       overlayImageSrc: "/uplife-products/rice.png",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.",
+        "Fuel your hectic days and busy nights with nutrition that moves you forward.",
     },
   ];
 
@@ -71,11 +71,9 @@ const ImageExpander = () => {
       />
 
       <h1 className="font-normal  text-[28px]/8  md:text-[42px]/16 ">
-        What happens when you UP your Life?
-      </h1>
+Three Paths, One Purpose: Healthier You      </h1>
       <h2 className="font-light text-sm md:text-2xl mt-[10px]">
-        Smart choice for a lighter, better you
-      </h2>
+Gut health, weight balance, or active living—choose what matches your journey      </h2>
 
       <OverlayCard
         cards={cards}

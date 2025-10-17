@@ -10,17 +10,13 @@ const CommunityBanner = () => {
     >
       <div className="container mx-auto px-6  md:px-16 text-center md:text-start">
         <h2 className="text-2xl md:text-[44px]/16 capitalize font-normal">
-          join the uplife movement
-        </h2>
+Real Stories, Real Wellness Wins        </h2>
 
         <p className="text-sm md:text-lg font-light w-fit md:w-1/2 mb-6 pt-2 md:pt-0">
-          Thousands of families have already discovered the difference. Share
-          your transformation, inspire others, celebrate wellness wins together.
-          Your journey matters, your story inspires.{" "}
-        </p>
+Discover inspiring transformation journeys, expert wellness tips, and delicious healthy recipes from families across India. Get practical insights that make your health goals achievable.        </p>
 
         <button className="text-sm md:text-2xl font-normal py-[6px] md:py-2.5 px-4 md:px-6 capitalize outline-1 outline-white rounded-full">
-          discover life →
+          Exlpore our blogs →
         </button>
       </div>
 

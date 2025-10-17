@@ -102,7 +102,6 @@
 
 // export default Faqs;
 
-
 "use client";
 
 import { useState } from "react";
@@ -142,7 +141,7 @@ const Faqs = () => {
     <div className="py-13 container mx-auto px-6  md:px-16 space-y-11">
       <div className="capitalize flex flex-col md:flex-row md:items-center justify-between">
         <h2 className="text-2xl md:text-[42px]/16 font-normal">
-          All Your Uplife Questions - Answered
+          Frequently Asked Questions{" "}
         </h2>
 
         <div className="relative  w-full md:w-72 mt-4 md:mt-0">
@@ -172,36 +171,38 @@ const Faqs = () => {
             }}
             className="rounded-t-3xl p-2 md:p-6 flex gap-4 md:gap-11 transition-all duration-1000 ease-in-out"
           >
-            <span className="font-bold text-2xl  md:text-[40px]/12">0{faq.id}</span>
+            <span className="font-bold text-2xl  md:text-[40px]/12">
+              0{faq.id}
+            </span>
 
             <div className="w-full space-y-2.5">
               <div className="w-full flex items-start justify-between">
                 <h2 className="text-ld md:text-2xl  ">{faq.question}</h2>
                 {selectedQuesId === faq.id ? (
-                  <svg 
-                    onClick={() => setSelectedQuesId(null)} 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
+                  <svg
+                    onClick={() => setSelectedQuesId(null)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="lucide cursor-pointer w-8 h-8 md:w-11 md:h-11 rounded-full p-2 bg-[#000000] text-[#ffffff] flex-shrink-0"
                   >
                     <path d="M18 6 6 18" />
                     <path d="m6 6 12 12" />
                   </svg>
                 ) : (
-                  <svg 
-                    onClick={() => setSelectedQuesId(faq.id)} 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
+                  <svg
+                    onClick={() => setSelectedQuesId(faq.id)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="lucide cursor-pointer w-8 h-8 md:w-11 md:h-11 bg-[#F3F5F6] p-2 rounded-full flex-shrink-0"
                   >
                     <path d="M5 12h14" />

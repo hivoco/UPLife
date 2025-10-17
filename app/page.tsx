@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className="py-6 md:pt-9  md:pb-18  container mx-auto px-6  md:px-16 bg-white text-black text-center w-full">
         <h1 className="font-normal text-2xl/8 md:text-[42px]/16 ">
-          What happens when you UP your Life?
+          What happens when you UP your Oil?
         </h1>
 
         <h2 className="font-light text-sm md:text-2xl mt-[10px]">
@@ -32,15 +32,16 @@ export default function Home() {
       <div className="py-6 md:py-16 container mx-auto px-6  md:px-16 flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
         <section className="text-center md:text-left">
           <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12 ">
-            From the house of World’s{" "}
+            World’s No.1 Basmati Rice Brand,{" "}
           </h1>
           <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12">
-            No.1 Basmati Rice Brand{" "}
+            Chosen by Generations{" "}
           </h1>
 
           <p className="font-light md:font-normal text-xs md:text-lg">
-            When tradition meets innovation, extraordinary wellness becomes
-            possible.
+            A journey rooted in tradition and refined with modern
+            excellence—India Gate continues to define what quality means for
+            families everywhere.
           </p>
         </section>
 
@@ -64,13 +65,11 @@ export default function Home() {
           />
           <div className="w-full md:max-w-2xl space-y-2 md:space-y-4 pt-6 md:pt-16 order-1 md:order-0">
             <h1 className="font-normal text-2xl md:text-[44px]/11 ">
-              Your health, your product{" "}
+              Go Smart. Go Less{" "}
             </h1>
             <p className="font-light text-center md:text-left text-sm md:text-base">
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-              consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum
-              dolor sit amet consectetur.
-               Lorem ipsum dolor sit amet consectetur. Lorem ipsum
+              With UpLife Go Less, every squeeze brings you smarter
+              cooking—balanced, flavorful, and crafted for your lifestyle.{" "}
             </p>
           </div>
         </div>
@@ -104,7 +103,6 @@ export default function Home() {
           height={100}
           className="w-full h-auto"
         />
-
       </div>
 
       <div className="pt-11">

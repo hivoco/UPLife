@@ -15,7 +15,6 @@ interface OverlayCardProps {
   selectedCardId: number | null;
   setSelectedCardId: (id: number | null) => void;
   divRef: React.RefObject<HTMLDivElement | null>;
-  // onCardClick: (cardId: number, event: React.MouseEvent) => void;
 }
 
 const OverlayCard = ({
@@ -23,21 +22,14 @@ const OverlayCard = ({
   selectedCardId,
   setSelectedCardId,
   divRef,
-}: // onCardClick,
-OverlayCardProps) => {
+}: OverlayCardProps) => {
   const [clickedCardStyles, setClickedCardStyles] = useState({
     top: 0,
     left: 0,
     width: 0,
-    height: 0,    
+    height: 0,
   });
   const [isAnimating, setIsAnimating] = useState(false);
-  // const [positionObj, setPositionObj] = useState({
-  //   top: "",
-  //   left: "",
-  //   width: "",
-  //   height: "",
-  // });
 
   const handleCardClick = (cardId: number, event: React.MouseEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
@@ -69,55 +61,6 @@ OverlayCardProps) => {
       className={`w-full flex flex-col md:flex-row  justify-center gap-3.5 md:gap-6 items-center pt-7 md:pt-[50px]
     `}
     >
-      {/* <div
-        onClick={() => setSelectedCardId(null)}
-        style={{
-          transformOrigin: selectedCardId
-            ? `${clickPosition.x}px ${clickPosition.y}px`
-            : "center center",
-        }}
-        className={`absolute  inset-0 w-9/10 md:w-full z-10 mx-auto px-6 h-full  md:p-16 text-left flex flex-col md:flex-row items-center gap-16 justify-center md:justify-between text-white
-           duration-700 transition-all ease-out cursor-pointer
-          ${
-            selectedCardId
-              ? "opacity-100 scale-100 pointer-events-auto"
-              : "opacity-0 scale-[0.3] pointer-events-none"
-          }
-      `}
-      >
-        <div className="text-center md:text-left md:w-[45%]">
-          <h2 className="text-2xl md:text-5xl">GUT PRO </h2>
-          <p className="text-xs md:text-lg font-light">
-            Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-            consectetur.
-          </p>
-        </div>
-
-        {selectedCardId && (
-          <Image
-            src={cards[selectedCardId-1].overlayImageSrc}
-            width={430}
-            height={320}
-            alt="uplife product"
-          />
-        )}
-
-        <span className="absolute top-6 right-6 md:top-16 md:right-16 text-white  text-2xl/6 text-center">
-          <X size={24} color="#fff" />
-        </span>
-
-        {selectedCardId && (
-          <Image
-            src={cards[selectedCardId - 1].imageSrc}
-            fill
-            className="object-cover absolute inset-0 -z-[2] pointer-events-none rounded-4xl"
-            alt="uplife product full width"
-          />
-        )}
-
-        <div className="absolute z-[-1] inset-0 bg-black/60 backdrop-blur-md pointer-events-none rounded-4xl"></div>
-      </div> */}
-
       {cards.map((card) => (
         <div
           onClick={(e) => handleCardClick(card.id, e)}
