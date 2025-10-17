@@ -31,14 +31,14 @@ export default function Home() {
 
       <div className="py-6 md:py-16 container mx-auto px-6  md:px-16 flex flex-col md:flex-row justify-between gap-5 md:gap-4 items-center">
         <section className="text-center md:text-left">
-          <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12 ">
+          <h1 className="font-normal text-2xl/7.5 md:text-2xl xl:text-3xl/11">
             World’s No.1 Basmati Rice Brand,{" "}
           </h1>
-          <h1 className="font-normal text-2xl/7.5 md:text-[34px]/12">
+          <h1 className="font-normal text-2xl/7.5 md:text-3xl/11">
             Chosen by Generations{" "}
           </h1>
 
-          <p className="font-light md:font-normal text-xs md:text-lg">
+          <p className="font-light md:font-normal text-xs md:text-lg md:max-w-[40svw]">
             A journey rooted in tradition and refined with modern
             excellence—India Gate continues to define what quality means for
             families everywhere.
@@ -46,7 +46,7 @@ export default function Home() {
         </section>
 
         <video
-          className="aspect-[9/16]  md:aspect-video object-cover md:object-contain w-full md:w-[45vw] rounded-xl md:rounded-3xl"
+          className="aspect-[9/16]  md:aspect-video object-cover md:object-contain w-full  md:max-w-[43svw]  rounded-xl md:rounded-3xl"
           src="/16-9.mp4"
           autoPlay={true}
           loop
@@ -65,7 +65,7 @@ export default function Home() {
           />
           <div className="w-full md:max-w-2xl space-y-2 md:space-y-4 pt-6 md:pt-16 order-1 md:order-0">
             <h1 className="font-normal text-2xl md:text-[44px]/11 ">
-              Go Smart. Go Less{" "}
+              Flavour Meets Fitness Goals{" "}
             </h1>
             <p className="font-light text-center md:text-left text-sm md:text-base">
               With UpLife Go Less, every squeeze brings you smarter
