@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import OverlayCard from "./OverlayCard";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const ImageExpander = () => {
   const cards = [
@@ -33,27 +33,11 @@ const ImageExpander = () => {
   ];
 
   const [selectedCardId, setSelectedCardId] = useState<number | null>(null);
-  const divRef = useRef<HTMLDivElement |null>(null);
-
-  const handleClick = () => {
-    setTimeout(() => {
-      divRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 100);
-  };
-
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedCardId(null);
-    };
-
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+  const divRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div
       ref={divRef}
-      onClick={handleClick}
       className={`relative container mx-auto px-6 md:px-16  w-full py-6 md:pt-[56px] md:pb-[112px] text-center  
         ${
           selectedCardId
@@ -71,67 +55,19 @@ const ImageExpander = () => {
       />
 
       <h1 className="font-normal  text-[28px]/8  md:text-[42px]/16 ">
-Three Paths, One Purpose: Healthier You      </h1>
+        Three Paths, One Purpose: Healthier You{" "}
+      </h1>
       <h2 className="font-light text-sm md:text-2xl mt-[10px]">
-Gut health, weight balance, or active living—choose what matches your journey      </h2>
+        Gut health, weight balance, or active living—choose what matches your
+        journey{" "}
+      </h2>
 
       <OverlayCard
         cards={cards}
         selectedCardId={selectedCardId}
         setSelectedCardId={setSelectedCardId}
         divRef={divRef}
-        // onCardClick={handleCardClick}
       />
-
-      {/* {selectedCardId && ( */}
-      {/* <div
-        onClick={() => setSelectedCardId(null)}
-        style={{
-          transformOrigin: selectedCardId
-            ? `${clickPosition.x}px ${clickPosition.y}px`
-            : "center center",
-        }}
-        className={`absolute  inset-0 w-9/10 md:w-full z-10 mx-auto px-6 h-full  md:p-16 text-left flex flex-col md:flex-row items-center gap-16 justify-center md:justify-between text-white
-           duration-700 transition-all ease-out cursor-pointer
-          ${
-            selectedCardId
-              ? "opacity-100 scale-100 pointer-events-auto"
-              : "opacity-0 scale-[0.3] pointer-events-none"
-          }
-      `}
-      >
-        <div className="text-center md:text-left md:w-[45%]">
-          <h2 className="text-2xl md:text-5xl">GUT PRO </h2>
-          <p className="text-xs md:text-lg font-light">
-            Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-            consectetur.
-          </p>
-        </div>
-        {selectedCardId && (
-          <Image
-            src={cards[selectedCardId - 1].overlayImageSrc}
-            width={430}
-            height={320}
-            alt="uplife product"
-          />
-        )}
-
-        <span className="absolute top-6 right-6 md:top-16 md:right-16 text-white  text-2xl/6 text-center">
-          <X size={24} color="#fff" />
-        </span>
-
-        {selectedCardId && (
-          <Image
-            src={cards[selectedCardId - 1].imageSrc}
-            fill
-            className="object-cover absolute inset-0 -z-[2] pointer-events-none rounded-4xl"
-            alt="uplife product full width"
-          />
-        )}
-
-        <div className="absolute z-[-1] inset-0 bg-black/60 backdrop-blur-md pointer-events-none rounded-4xl"></div>
-      </div> */}
-      {/* // )} */}
     </div>
   );
 };

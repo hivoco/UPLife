@@ -30,11 +30,26 @@ const OverlayCard = ({
     height: 0,
   });
   const [isAnimating, setIsAnimating] = useState(false);
+  const handleClick = () => {
+    setTimeout(() => {
+      divRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedCardId(null);
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   const handleCardClick = (cardId: number, event: React.MouseEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
     const parentRect = divRef.current?.getBoundingClientRect();
     if (parentRect) {
+      handleClick();
       const position = {
         top: rect.top - parentRect.top,
         left: rect.left - parentRect.left,
@@ -75,8 +90,6 @@ const OverlayCard = ({
                   height: `${clickedCardStyles.height}px`,
                 }
               : {}),
-            background:
-              "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 78.85%, rgba(0, 0, 0, 0.5) 100%)",
           }}
           className={` ${
             selectedCardId === card.id
@@ -111,7 +124,7 @@ const OverlayCard = ({
             ${
               selectedCardId === card.id
                 ? " text-center md:text-left md:w-[45%] "
-                : "absolute bottom-0  left-0 p-4"
+                : "absolute bottom-0 z-10 left-0 p-4"
             }
             `}
           >
@@ -143,7 +156,7 @@ const OverlayCard = ({
             className={`transition-all ease-in-out  ${
               selectedCardId === card.id
                 ? "opacity-100 scale-100 delay-100 duration-700"
-                : "opacity-0 scale-95"
+                : "opacity-0 scale-95 pointer-events-none "
             }`}
             src={card.overlayImageSrc}
             width={430}
@@ -165,7 +178,20 @@ const OverlayCard = ({
               </span>{" "}
             </>
           ) : (
-            <div className="absolute z-1 rounded-4xl inset-0 bg-black/10"></div>
+            <div
+              // les dark
+              // style={{
+              //   background:
+              //     "linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.7) 90%, rgba(0, 0, 0, 0.9) 100%)",
+              // }}
+
+              // darker
+              style={{
+                background:
+                  " linear-gradient(180deg, rgba(255, 255, 255, 0) 53%, rgba(81, 81, 81, 0.578558) 68.42%, rgba(0, 0, 0, 0.88) 79.98%, #000000 96.15%)",
+              }}
+              className="absolute z-1 rounded-4xl inset-0 bg-black/10"
+            ></div>
           )}
         </div>
       ))}
