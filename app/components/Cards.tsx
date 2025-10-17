@@ -26,7 +26,7 @@ const Cards = () => {
       id: 3,
       title: "Mindful eating, stress-free life",
       description:
-        "Eating slowly with awareness brings calm, balance, and lasting happiness.Retry",
+        "Eating slowly with awareness brings calm, balance, and lasting happiness",
       image: "/cards/3.png",
       size: "small",
     },
